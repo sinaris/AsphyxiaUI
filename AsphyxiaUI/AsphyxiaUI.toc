@@ -1,0 +1,8 @@
+## Interface: 40300
+## Title: AsphyxiaUI: Layout
+## Version: 4.0
+## SavedVariablesPerCharacter: TukuiSaved
+## RequiredDeps: AsphyxiaUI_Config, Tukui
+## X-oUF: oUFTukui
+
+AsphyxiaUI.xml

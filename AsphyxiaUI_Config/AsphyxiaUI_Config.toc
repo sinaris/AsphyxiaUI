@@ -1,0 +1,5 @@
+## Interface: 40300
+## Title: Asphyxia: Options
+## Version: 4.0
+
+config\config.lua
