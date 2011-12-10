@@ -1,8 +1,5 @@
 ## Interface: 40300
-## Title: |cffC495DDAsphyxiaUI: Layout|r
-## Notes: Personal Tukui edit (Original by: Asphyxia).
-## Version: 1.0
-## Author: Sinaris - EU Das Syndikat, Asphyxia
+## Title: AsphyxiaUI: Layout
 ## RequiredDeps: AsphyxiaUI_Config, Tukui
 ## X-oUF: oUFTukui
 

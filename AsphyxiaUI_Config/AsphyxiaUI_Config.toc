@@ -1,7 +1,4 @@
 ## Interface: 40300
-## Title: |cffC495DDAsphyxiaUI: Options|r
-## Notes:
-## Version: 1.0
-## Author: Sinaris - EU Das Syndikat, Asphyxia
+## Title: Asphyxia: Options
 
 config\config.lua
