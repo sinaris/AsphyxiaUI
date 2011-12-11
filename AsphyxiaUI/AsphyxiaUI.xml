@@ -64,6 +64,15 @@
 	<Script file="modules\unitframes\boss.lua" />
 	<Script file="modules\unitframes\layout.lua" />
 
+	<Script file="modules\addonskins\combat_toggle.lua" />
+	<Script file="modules\addonskins\Tukui_DBM.lua" />
+	<Script file="modules\addonskins\Omen.lua" />
+	<Script file="modules\addonskins\Recount.lua" />
+	<Script file="modules\addonskins\Skada.lua" />
+	<Script file="modules\addonskins\TinyDPS.lua" />
+	<Script file="modules\addonskins\bigwigs.lua" />
+	<Script file="modules\addonskins\balancepower.lua" />
+
 	<Script file="modules\extras\addonmanager.lua" />
 	<Script file="modules\extras\align.lua" />
 	<Script file="modules\extras\mail.lua" />

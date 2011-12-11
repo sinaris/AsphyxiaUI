@@ -3,6 +3,7 @@
 ## Version: 4.0
 ## SavedVariablesPerCharacter: TukuiSaved
 ## RequiredDeps: AsphyxiaUI_Config, Tukui
+## OptionalDeps: BigWigs, DBM-Core, Omen, Recount, Skada, TinyDPS
 ## X-oUF: oUFTukui
 
 AsphyxiaUI.xml

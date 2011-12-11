@@ -16,6 +16,8 @@ L.core_uihelp30 = " "
 L.actionbars_locked = "Actionbars |cffe45050Locked|r"
 L.actionbars_unlocked = "Actionbars |cff50e468Unlocked|r"
 
+L.addons_toggle = "Toggle"
+
 L.mail_need = "Need a mailbox."
 L.mail_messages = "Messages"
 

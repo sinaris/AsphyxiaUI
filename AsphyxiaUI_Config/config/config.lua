@@ -4,6 +4,19 @@ C["asphyxia"] = {
 	["layout"] = "asphyxia", -- unitframe style, choose from ( "asphyxia", "asphyxia2" "smelly" or "tukui" )
 }
 
+C["Addon_Skins"] = {
+	["background"] = false,
+	["combat_toggle"] = false,
+	["Recount"] = true,
+	["Skada"] = true,
+	["Omen"] = true,
+	["TinyDPS"] = true,
+	["DBM"] = true,
+	["bigwigs"] = true,
+	["embedright"] = "None",
+	["embedrighttoggle"] = true,
+}
+
 C["actionbar"] = {
 	["hideshapeshift"] = false,
 	["buttonsize"] = 27,
@@ -91,6 +104,14 @@ C["datatext"] = {
 C["general"] = {
 	["backdropcolor"] = { 0, 0, 0 },
 	["bordercolor"] = { .125, .125, .125 },
+
+	["bigwigsreskin"] = false, -- disabled because we need out own addskin
+	["dbmreskin"] = false, -- disabled because we need out own addskin
+	["dxereskin"] = false, -- disabled because we need out own addskin
+	["omenreskin"] = false, -- disabled because we need out own addskin
+	["recountreskin"] = false, -- disabled because we need out own addskin
+	["skadareskin"] = false, -- disabled because we need out own addskin
+	["tinydpsreskin"] = false, -- disabled because we need out own addskin
 }
 
 C["interruptanncounce"] = {
@@ -109,6 +130,13 @@ C["unitframes"] = {
 	["targetauras"] = true,
 	["hideunitframes"] = false,
 	["classicon"] = true,
+
+	["gradienthealth"] = true,
+	["gradient"] = {
+		4.5, 0.1, 0.1,
+		0.6, 0.3, 0.3,
+		0.2, 0.2, 0.2,
+	},
 }
 
 C["media"] = {
