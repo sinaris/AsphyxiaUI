@@ -64,6 +64,8 @@
 	<Script file="modules\unitframes\boss.lua" />
 	<Script file="modules\unitframes\layout.lua" />
 
+	<Script file="modules\misc\sCombo.lua" />
+
 	<Script file="modules\addonskins\combat_toggle.lua" />
 	<Script file="modules\addonskins\Tukui_DBM.lua" />
 	<Script file="modules\addonskins\Omen.lua" />

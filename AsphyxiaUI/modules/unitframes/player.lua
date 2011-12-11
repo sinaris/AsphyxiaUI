@@ -130,11 +130,51 @@ S.EnableTukuiPlayer = function()
 		do
 			if( C["unitframes"].classbar == true ) then
 				if( S.myclass == "DRUID" ) then
-				
+					self.DruidManaBackground:ClearAllPoints()
+					self.DruidManaBackground:SetPoint( "BOTTOMLEFT", self, "TOPLEFT", -2, 5 )
+					self.DruidManaBackground:Size( 234, 6 )
+					self.DruidManaBackground:SetBackdrop( nil )
+					self.DruidManaBackground:SetTemplate( "Default" )
+					self.DruidManaBackground:CreateShadow()
+
+					self.DruidMana:ClearAllPoints()
+					self.DruidMana:SetPoint( "TOPLEFT", self.DruidManaBackground, "TOPLEFT", 2, -2 )
+					self.DruidMana:Size( 230, 2 )
+
+					self.EclipseBar:ClearAllPoints()
+					self.EclipseBar:SetPoint( "TOPLEFT", self.DruidManaBackground, "TOPLEFT", 2, -2 )
+					self.EclipseBar:Size( 230, 2 )
+
+					self.EclipseBar.LunarBar:Size( 230, 2 )
+					self.EclipseBar.SolarBar:Size( 230, 2 )
 				end
 
-				if( S.myclass == "WARLOCK" or S.myclass == "PALADIN" ) then
+				if( S.myclass == "WARLOCK" ) then
+					self.SoulShards:ClearAllPoints()
+					self.SoulShards:Point( "BOTTOMLEFT", self, "TOPLEFT", 0, 7 )
+					self.SoulShards:Size( 230, 2 )
+					self.SoulShards:CreateLargeBorder( "", true )
+
+					for i = 1, 3 do
+						self.SoulShards[i]:SetHeight( 2 )
+						self.SoulShards[i]:SetWidth( 228 / 3 )
+						self.SoulShards[i]:SetStatusBarColor( 148 / 255, 130 / 255, 201 / 255 )
+						self.SoulShards[i].bg:SetTexture( 148 / 255, 130 / 255, 201 / 255 )
+					end
+				end
 				
+				if( S.myclass == "PALADIN" ) then
+					self.HolyPower:ClearAllPoints()
+					self.HolyPower:Point( "BOTTOMLEFT", self, "TOPLEFT", 0, 7 )
+					self.HolyPower:Size( 230, 2 )
+					self.HolyPower:CreateLargeBorder( "", true )
+
+					for i = 1, 3 do
+						self.HolyPower[i]:SetHeight( 2 )
+						self.HolyPower[i]:SetWidth( 228 / 3 )
+						self.HolyPower[i]:SetStatusBarColor( 228 / 255, 225 / 255, 16 / 255 )
+						self.HolyPower[i].bg:SetTexture( 228 / 255, 225 / 255, 16 / 255 )
+					end
 				end
 
 				if( S.myclass == "DEATHKNIGHT" ) then
@@ -160,7 +200,27 @@ S.EnableTukuiPlayer = function()
 				end
 
 				if( S.myclass == "SHAMAN" ) then
-				
+					local border = CreateFrame( "Frame", nil, self )
+
+					for i = 1, 4 do
+						self.TotemBar[i]:ClearAllPoints()
+						self.TotemBar[i]:SetHeight( 2 )
+						self.TotemBar[i]:SetBackdrop( nil )
+
+						if( i == 1 ) then
+							self.TotemBar[i]:SetWidth( 56 )
+							self.TotemBar[i]:Point( "BOTTOMLEFT", self, "TOPLEFT", 0, 7 )
+						else
+							self.TotemBar[i]:SetWidth( 57 )
+							self.TotemBar[i]:Point( "TOPLEFT", self.TotemBar[i - 1], "TOPRIGHT", 1, 0 )
+						end
+					end
+
+					border:ClearAllPoints()
+					border:Point( "TOPLEFT", self.TotemBar[1], "TOPLEFT", -2, 2 )
+					border:Point( "BOTTOMRIGHT", self.TotemBar[4], "BOTTOMRIGHT", 2, -2 )
+					border:SetTemplate( "Default" )
+					border:CreateShadow( "Default" )
 				end
 			end
 		end

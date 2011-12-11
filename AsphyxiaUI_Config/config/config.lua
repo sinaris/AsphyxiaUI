@@ -24,7 +24,7 @@ C["actionbar"] = {
 	["stancebuttonsize"] = 27,
 	["buttonspacing"] = 4,
 	["vertical_rightbars"] = false,
-	["vertical_shapeshift"] = true,
+	["vertical_shapeshift"] = false,
 	["mainswap"] = true,
 }
 
@@ -123,6 +123,11 @@ C["map"] = {
 	["location_panel"] = true,
 }
 
+C["sCombo"] = {
+	["enable"] = true,									-- Enable sCombo-Addon for combopoints instead of default cp-display
+	["energybar"] = false,								-- show energy-Bar below cp bar
+}
+
 C["unitframes"] = {
 	["charportrait"] = true,
 	["cblatency"] = true,
@@ -130,6 +135,7 @@ C["unitframes"] = {
 	["targetauras"] = true,
 	["hideunitframes"] = false,
 	["classicon"] = true,
+	["classiccombo"] = false,
 
 	["gradienthealth"] = true,
 	["gradient"] = {
