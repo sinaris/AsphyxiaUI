@@ -27,6 +27,7 @@
 	<Script file="modules\maps\location_panel.lua" />
 	<Script file="modules\chat\chat.lua" />
 	<Script file="modules\misc\threatbar.lua" />
+	<Script file="modules\bags\bags.lua" />
 
 	<Script file="modules\tooltip\talents.lua" />
 	<Script file="modules\tooltip\tooltipicon.lua" />
@@ -62,6 +63,7 @@
 	<Script file="modules\unitframes\focustarget.lua" />
 	<Script file="modules\unitframes\arena.lua" />
 	<Script file="modules\unitframes\boss.lua" />
+	<Script file="modules\unitframes\raidframes.lua" />
 	<Script file="modules\unitframes\layout.lua" />
 
 	<Script file="modules\misc\sCombo.lua" />

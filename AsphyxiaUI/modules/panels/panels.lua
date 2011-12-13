@@ -20,6 +20,15 @@ if( C["chat"].background == true ) then
 end
 
 ---------------------------------------------------------------------------------------------
+-- add shadow to panels
+---------------------------------------------------------------------------------------------
+local panelsToAddShadow = { TukuiBar1, TukuiPetBar, TukuiChatBackgroundLeft, TukuiChatBackgroundRight, TukuiInfoLeft, TukuiInfoRight }
+
+for _, panels in pairs( panelsToAddShadow ) do
+	panels:CreateShadow()
+end
+
+---------------------------------------------------------------------------------------------
 -- chat frames
 ---------------------------------------------------------------------------------------------
 TukuiChatBackgroundLeft:ClearAllPoints()
@@ -36,11 +45,13 @@ TukuiChatBackgroundRight:SetTemplate( "Transparent" )
 -- chat tabs
 ---------------------------------------------------------------------------------------------
 TukuiTabsLeftBackground:ClearAllPoints()
+TukuiTabsLeftBackground:SetWidth( TukuiChatBackgroundLeft:GetWidth() -10)
 TukuiTabsLeftBackground:Point( "TOP", TukuiChatBackgroundLeft, "TOP", 0, -5 )
 TukuiTabsLeftBackground:SetFrameLevel( TukuiChatBackgroundLeft:GetFrameLevel() + 1 )
 TukuiTabsLeftBackground:CreateOverlay( TukuiTabsLeftBackground )
 
 TukuiTabsRightBackground:ClearAllPoints()
+TukuiTabsRightBackground:SetWidth( TukuiChatBackgroundRight:GetWidth() -10)
 TukuiTabsRightBackground:Point( "TOP", TukuiChatBackgroundRight, "TOP", 0, -5 )
 TukuiTabsRightBackground:SetFrameLevel( TukuiChatBackgroundRight:GetFrameLevel() + 1 )
 TukuiTabsRightBackground:CreateOverlay( TukuiTabsRightBackground )
@@ -56,11 +67,13 @@ end
 -- info left, info right
 ---------------------------------------------------------------------------------------------
 TukuiInfoLeft:ClearAllPoints()
+TukuiInfoLeft:SetWidth( TukuiChatBackgroundLeft:GetWidth() -10)
 TukuiInfoLeft:SetPoint( "BOTTOM", TukuiChatBackgroundLeft, "BOTTOM", 0, 5 )
 TukuiInfoLeft:SetFrameLevel( TukuiChatBackgroundLeft:GetFrameLevel() + 1 )
 TukuiInfoLeft:CreateOverlay( TukuiInfoLeft )
 
 TukuiInfoRight:ClearAllPoints()
+TukuiInfoRight:SetWidth( TukuiChatBackgroundRight:GetWidth() -10)
 TukuiInfoRight:SetPoint( "BOTTOM", TukuiChatBackgroundRight, "BOTTOM", 0, 5 )
 TukuiInfoRight:SetFrameLevel( TukuiChatBackgroundRight:GetFrameLevel() + 1 )
 TukuiInfoRight:CreateOverlay( TukuiInfoRight )
@@ -95,6 +108,7 @@ if( C["actionbar"].enable == true ) then
 		TukuiRightBar:ClearAllPoints()
 		TukuiRightBar:Point( "RIGHT", UIParent, "RIGHT", -8, 0 )
 	end
+	TukuiRightBar:CreateShadow( "Default" )
 
 	TukuiPetBar:ClearAllPoints()
 	if( C["actionbar"].vertical_rightbars == true ) then
@@ -105,3 +119,8 @@ if( C["actionbar"].enable == true ) then
 		TukuiPetBar:Height( ( S.petbuttonsize + S.buttonspacing * 2 ) + 2 )
 	end
 end
+
+local BlindBagFrame = CreateFrame( "Frame", "BlindBagFrame", UIParent )
+BlindBagFrame:CreatePanel( "Default", 1, 1, "TOPRIGHT", TukuiChatBackgroundRight, "TOPRIGHT", 0, 0 )
+BlindBagFrame:SetAlpha( 0 )
+	

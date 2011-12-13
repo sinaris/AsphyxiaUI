@@ -23,3 +23,35 @@ L.mail_messages = "Messages"
 
 L.tooltip_loading = "Loading Talents..."
 L.tooltip_no_talent = "No Talents"
+
+-- databars
+TukuiConfigUILocalization.databars = "Databars"
+TukuiConfigUILocalization.databarsframerate = "FPS text position"
+TukuiConfigUILocalization.databarsmemory = "Memory text position"
+TukuiConfigUILocalization.databarsdurability = "Durability text position"
+TukuiConfigUILocalization.databarslatency = "Latency text position"
+TukuiConfigUILocalization.databarsreps = "Don't touch this!"
+TukuiConfigUILocalization.databarssettings = "Don't touch this!"
+TukuiConfigUILocalization.databarsreputation = "Enable reputation databars"
+TukuiConfigUILocalization.databarscurrency = "Enable currency tracking databars"
+
+-- Asphyxia (Layouts)
+TukuiConfigUILocalization.asphyxia = "Asphyxia options"
+--TukuiConfigUILocalization.asphyxialayout = "Choose between: asphyxia, asohyxia2, smelly, tukui"
+
+TukuiConfigUILocalization.interruptannounce = "Interrupt announce"
+
+TukuiConfigUILocalization.map = "Locationpanel"
+
+TukuiConfigUILocalization.castbar = "Castbar"
+TukuiConfigUILocalization.castbarclasscolor = "Enable classcolor on castbars"
+TukuiConfigUILocalization.castbarnointerruptcolor = "Enable classcolor on castbars"
+TukuiConfigUILocalization.castbarcastbarcolor = "Enable classcolor on castbars"
+
+TukuiConfigUILocalization.Addon_Skins = "Seperate Addonskins"
+
+TukuiConfigUILocalization.buffreminder = "Buffreminder"
+
+TukuiConfigUILocalization.sCombo = "sCombo"
+TukuiConfigUILocalization.sComboenable = "Enable sCombo"
+TukuiConfigUILocalization.sComboenergybar = "Enable sCombo energybar"

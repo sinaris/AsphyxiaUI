@@ -91,95 +91,95 @@ for _, data in pairs( datatext ) do
 end
 
 if( C["datatext"].armor > 0 ) then
-	TukuiStatArmorText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatArmorText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].avd > 0 ) then
-	TukuiStatAvoidanceText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatAvoidanceText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].bags > 0 ) then
-	TukuiStatBagsText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatBagsText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].battleground == true ) then
-	TukuiStatBattleGroundText1:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
-	TukuiStatBattleGroundText2:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
-	TukuiStatBattleGroundText3:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatBattleGroundText1:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+	TukuiStatBattleGroundText2:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+	TukuiStatBattleGroundText3:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].calltoarms > 0 ) then
-	TukuiStatCallToArmsText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatCallToArmsText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].crit > 0 ) then
-	TukuiStatCritText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatCritText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].currency > 0 ) then
-	TukuiStatCurrencyText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatCurrencyText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].dps_text > 0 ) then
-	TukuiStatDPSText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatDPSText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].dur > 0 ) then
-	TukuiStatDurabilityText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatDurabilityText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].fps_ms > 0 ) then
-	TukuiStatFPSText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatFPSText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].friends > 0 ) then
-	TukuiStatFriendsText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatFriendsText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].gold > 0 ) then
-	TukuiStatGoldText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatGoldText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].guild > 0 ) then
-	TukuiStatGuildText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatGuildText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].haste > 0 ) then
-	TukuiStatHasteText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatHasteText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].hit > 0 ) then
-	TukuiStatHitText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatHitText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].hps_text > 0 ) then
-	TukuiStatHealText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatHealText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].mastery > 0 ) then
-	TukuiStatMasteryText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatMasteryText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].micromenu > 0 ) then
-	TukuiStatMicroMenuText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatMicroMenuText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].power > 0 ) then
-	TukuiStatPowerText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatPowerText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].regen > 0 ) then
-	TukuiStatRegenText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatRegenText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].system > 0 ) then
-	TukuiStatSystemText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatSystemText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].talent > 0 ) then
-	TukuiStatTalentText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatTalentText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end
 
 if( C["datatext"].wowtime > 0 ) then
-	TukuiStatTimeText:SetFont( C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
+	TukuiStatTimeText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 end

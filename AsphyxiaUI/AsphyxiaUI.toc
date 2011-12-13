@@ -1,6 +1,6 @@
 ## Interface: 40300
 ## Title: AsphyxiaUI: Layout
-## Version: 4.0
+## Version: 4.0.1337
 ## SavedVariablesPerCharacter: TukuiSaved
 ## RequiredDeps: AsphyxiaUI_Config, Tukui
 ## OptionalDeps: BigWigs, DBM-Core, Omen, Recount, Skada, TinyDPS

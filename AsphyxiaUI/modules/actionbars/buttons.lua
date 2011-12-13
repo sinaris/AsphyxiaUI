@@ -98,6 +98,9 @@ local RightBars = function()
 	if TukuiSaved.rightbars == 1 then
 		TukuiRightBar:Show()
 		TukuiBar4:Hide()
+		
+		BlindBagFrame:ClearAllPoints()
+		BlindBagFrame:SetPoint( "TOPRIGHT", TukuiRightBar, "TOPRIGHT", 0, 0 )
 
 		if C["actionbar"].vertical_rightbars == true then
 			TukuiRightBar:Width((S.buttonsize + S.buttonspacing * 2) + 2)
@@ -113,6 +116,9 @@ local RightBars = function()
 		TukuiRightBar:Show()
 		TukuiBar4:Show()
 
+		BlindBagFrame:ClearAllPoints()
+		BlindBagFrame:SetPoint( "TOPRIGHT", TukuiRightBar, "TOPRIGHT", 0, 0 )
+
 		if C["actionbar"].vertical_rightbars == true then
 			TukuiRightBar:Width((S.buttonsize * 2 + S.buttonspacing * 3) + 2)
 		else
@@ -126,6 +132,9 @@ local RightBars = function()
 	elseif TukuiSaved.rightbars == 3 then
 		TukuiRightBar:Show()
 		TukuiBar4:Show()
+
+		BlindBagFrame:ClearAllPoints()
+		BlindBagFrame:SetPoint( "TOPRIGHT", TukuiRightBar, "TOPRIGHT", 0, 0 )
 
 		if C["actionbar"].vertical_rightbars == true then
 			TukuiRightBar:Width((S.buttonsize * 3 + S.buttonspacing * 4) + 2)
@@ -157,6 +166,9 @@ local RightBars = function()
 	elseif TukuiSaved.rightbars == 0 then
 		TukuiRightBar:Hide()
 		TukuiBar4:Hide()
+
+		BlindBagFrame:ClearAllPoints()
+		BlindBagFrame:SetPoint( "TOPRIGHT", TukuiChatBackgroundRight, "TOPRIGHT", 0, 0 )
 
 		if TukuiSaved.splitbars ~= true then
 			MultiBarLeft:SetParent(TukuiBar3)

@@ -136,6 +136,8 @@ C["unitframes"] = {
 	["hideunitframes"] = false,
 	["classicon"] = true,
 	["classiccombo"] = false,
+	["gridonly"] = true,
+	["showsolo"] = true,
 
 	["gradienthealth"] = true,
 	["gradient"] = {

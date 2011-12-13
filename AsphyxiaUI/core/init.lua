@@ -11,6 +11,6 @@ init:SetScript( "OnEvent", function( self, event )
 			["actionbarsLocked"] = false,
 		}
 	end
-local TukuiSaved = TukuiSaved
+	local TukuiSaved = TukuiSaved
 
 end )
