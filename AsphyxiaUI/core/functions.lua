@@ -65,7 +65,7 @@ hooksecurefunc( S, "PostUpdatePower", function( power, unit, min, max )
 	local color = S.UnitColor.power[pToken]
 
 	if color then
-		power.value:SetTextColor(color[1], color[2], color[3])
+		power.value:SetTextColor( color[1], color[2], color[3] )
 	end
 end )
 

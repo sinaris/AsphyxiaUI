@@ -113,9 +113,9 @@ if( C["chat"].background == true ) then
 
 	local UpdateTexture = function( self )
 		if( IsAddOnLoaded( "Tukui_Raid" ) ) then
-			newTex = C["media"].switchlayoutheal
-		elseif( IsAddOnLoaded( "Tukui_Raid_Healing" ) ) then
 			newTex = C["media"].switchlayoutdd
+		elseif( IsAddOnLoaded( "Tukui_Raid_Healing" ) ) then
+			newTex = C["media"].switchlayoutheal
 		end
 
 		self.tex:SetTexture( newTex )

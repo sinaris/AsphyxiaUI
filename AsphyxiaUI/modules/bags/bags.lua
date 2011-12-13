@@ -33,7 +33,7 @@ end
 local function BagsPosition( self, value )
 	local bag = _G["Tukui" .. value]
 	if( value == "Bank" ) then
-		if not C["chat"].background then
+		if( C["chat"].background ~= true ) then
 			bag:SetPoint( "BOTTOMLEFT", TukuiInfoLeft, "TOPLEFT", 0, 3 )
 		else
 			bag:SetPoint( "BOTTOMLEFT", TukuiChatBackgroundLeft, "TOPLEFT", 0, 3 )
@@ -42,3 +42,5 @@ local function BagsPosition( self, value )
 
 	bag:CreateShadow( "Default" )
 end
+
+hooksecurefunc( Stuffing, "CreateBagFrame", BagsPosition )
