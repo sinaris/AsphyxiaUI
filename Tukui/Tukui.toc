@@ -1,0 +1,16 @@
+﻿## Interface: 40300
+## Author: Tukz
+## Project Collaborators: Elv22, Nightcracker
+## Credits to: Caith, Caellian, Shestak, Haste, Tekkub, Alza, Roth, P3lim, Tulla, Hungtar, hankthetank, Ishtara, Haleth and others...
+## Special Thanks to: Admins, Moderator and VIP's from tukui.org
+## Version: 14.24
+## X-Version: 5.0
+## Title: |cffC495DDTukui|r
+## Notes: UI of awesomeness!
+## SavedVariables: TukuiData
+## SavedVariablesPerCharacter: TukuiDataPerChar, TukuiSaved
+## OptionalDeps: Tukui_ConfigUI, Tukui_EditedDefaultConfig, !ClassColors, Clique, BigWigs, DBM-Core, Omen, Recount, Skada, TinyDPS
+## X-oUF: oUFTukui
+## Website: www.tukui.org
+
+Tukui.xml 

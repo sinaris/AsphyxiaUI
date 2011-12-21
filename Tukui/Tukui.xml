@@ -1,0 +1,246 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">	
+	<Script file="developer\reloadui.lua"/>
+	<Script file="developer\commands.lua"/>
+	<Script file="core\init.lua"/>
+
+	<Script file="locales\english.lua"/>
+	<Script file="locales\french.lua"/>
+	<Script file="locales\russian.lua"/>
+	<Script file="locales\german.lua"/>
+	<Script file="locales\taiwan.lua"/>
+	<Script file="locales\spanish.lua"/>
+	<Script file="locales\korean.lua"/>	
+	<Script file="locales\chinese.lua"/>
+
+	<Script file="config\config.lua"/>
+	<Script file="config\profiles.lua"/>
+	<Script file="core\customconfig.lua"/>
+	<Script file="core\config.lua"/>
+	<Script file="medias\medias.lua"/>
+
+	<Include file="modules\unitframes\core\oUF\oUF.xml"/>
+	<Script file="modules\unitframes\plugins\oUF_AuraWatch\oUF_AuraWatch.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_ClassIcons\oUF_ClassIcons.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_CombatFeedback\oUF_CombatFeedback.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_DebuffHighlight\oUF_DebuffHighlight.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_Experience\oUF_Experience.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_MovableFrames\movable.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_Reputation\oUF_Reputation.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_Smooth\oUF_Smooth.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_TotemBar\oUF_TotemBar.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_Trinkets\oUF_Trinkets.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_RaidDebuffs\oUF_RaidDebuffs.lua"/>	
+	<Script file="modules\unitframes\plugins\oUF_WeakenedSoul\oUF_WeakenedSoul.lua"/>	
+	<Script file="modules\unitframes\templates\colors.lua"/>
+
+	<Script file="core\video.lua"/>
+	<Script file="core\deprecated.lua"/>
+	<Script file="core\api.lua"/>
+	<Script file="core\functions.lua"/>
+	<Script file="core\fonts.lua"/>
+	<Script file="core\protection.lua"/>
+	<Script file="core\popups.lua"/>
+	<Script file="core\install.lua"/>
+
+	<Script file="modules\blizzard\watchframe.lua"/>
+	<Script file="modules\blizzard\durability.lua"/>
+	<Script file="modules\blizzard\vehicle.lua"/>
+	<Script file="modules\blizzard\capturebar.lua"/>
+	<Script file="modules\blizzard\gm.lua"/>
+	<Script file="modules\blizzard\ghostframe.lua"/>
+	<Script file="modules\blizzard\timertracker.lua"/>
+
+	<Script file="modules\misc\commands.lua"/>
+	<Script file="modules\misc\micromenu.lua"/>
+	<Script file="modules\blizzard\quests.lua"/>
+	<Script file="modules\misc\invite.lua"/>
+	<Script file="modules\misc\damage.lua"/>
+	<Script file="modules\loot\autodez.lua"/>
+	<Script file="modules\blizzard\symbol.lua"/>
+	<Script file="modules\loot\merchant.lua"/>
+	<Script file="modules\blizzard\error.lua"/>
+	<Script file="modules\chat\copyurl.lua"/>
+
+	<Script file="modules\tooltip\itemidcount.lua"/>
+	<Script file="modules\tooltip\tooltipicon.lua"/>
+	<Script file="modules\tooltip\talents.lua"/>
+
+	<Script file="modules\blizzard\kill.lua"/>
+	<Script file="modules\chat\spam.lua"/>
+	<Script file="modules\chat\profanity.lua"/>
+	<Script file="modules\blizzard\font.lua"/>
+	<Include file="modules\buffs\template.xml"/>
+	<Script file="modules\buffs\buffs.lua"/>
+	<Script file="modules\buffs\header.lua"/>
+
+	<Script file="modules\maps\minimap.lua"/>
+	<Script file="modules\maps\location_panel.lua"/>
+
+	<Script file="modules\panels\panels.lua" />
+	<Script file="modules\panels\asphyxia_panels.lua" />
+	<Script file="modules\panels\control_panel.lua" />
+
+	<Script file="modules\extras\raidbuffsreminder.lua" />
+	<Script file="modules\notifications\selfbuffs.lua" />
+
+	<Script file="modules\databars\barPanels.lua" /> 
+	<Script file="modules\databars\fps.lua" /> 
+	<Script file="modules\databars\latency.lua" /> 
+	<Script file="modules\databars\memory.lua" /> 
+	<Script file="modules\databars\currency.lua" /> 
+	<Script file="modules\databars\durability.lua" /> 
+	<Script file="modules\databars\reputation.lua" /> 
+	<Script file="modules\databars\postCreation.lua" /> 
+
+	<Script file="modules\datatext\armor.lua"/>
+	<Script file="modules\datatext\avoidance.lua"/>
+	<Script file="modules\datatext\bags.lua"/>
+	<Script file="modules\datatext\battleground.lua"/>
+	<Script file="modules\datatext\crit.lua"/>
+	<Script file="modules\datatext\dps.lua"/>
+	<Script file="modules\datatext\durability.lua"/>
+	<Script file="modules\datatext\fps.lua"/>
+	<Script file="modules\datatext\friend.lua"/>
+	<Script file="modules\datatext\gold.lua"/>
+	<Script file="modules\datatext\guild.lua"/>
+	<Script file="modules\datatext\haste.lua"/>
+	<Script file="modules\datatext\hps.lua"/>
+	<Script file="modules\datatext\system.lua"/>
+	<Script file="modules\datatext\power.lua"/>
+	<Script file="modules\datatext\time.lua"/>
+	<Script file="modules\datatext\currency.lua"/>
+	<Script file="modules\datatext\hit.lua"/>
+	<Script file="modules\datatext\micromenu.lua"/>
+	<Script file="modules\datatext\mastery.lua"/>
+	<Script file="modules\datatext\regen.lua"/>
+	<Script file="modules\datatext\talent.lua"/>
+	<Script file="modules\datatext\calltoarms.lua"/>
+
+	<Script file="modules\actionbars\Bind.lua"/>
+	<Script file="modules\actionbars\Hide.lua"/>
+	<Script file="modules\actionbars\Bar1.lua"/>
+	<Script file="modules\actionbars\Bar2.lua"/>
+	<Script file="modules\actionbars\Bar3.lua"/>
+	<Script file="modules\actionbars\Bar4.lua"/>
+	<Script file="modules\actionbars\Bar5.lua"/>
+	<Script file="modules\actionbars\BarPet.lua"/>
+	<Script file="modules\actionbars\BarShift.lua"/>
+	<Script file="modules\actionbars\BarTotem.lua"/>
+	<Script file="modules\actionbars\buttons.lua"/>	
+	<Script file="modules\actionbars\Style.lua"/>
+	<Script file="modules\actionbars\Range.lua"/>
+	<Script file="modules\actionbars\Others.lua"/>
+	<Script file="modules\actionbars\Cooldowns.lua"/>
+	<Script file="modules\actionbars\Extra.lua"/>
+	
+	<Script file="modules\chat\chatframes.lua"/>
+	<Script file="modules\chat\telltarget.lua"/>
+	<Script file="modules\chat\copychat.lua"/>
+	<Script file="modules\chat\mousescroll.lua"/>
+	<Script file="modules\chat\sounds.lua"/>
+	
+	<Script file="modules\tooltip\tooltip.lua" />
+	<Script file="modules\tooltip\tooltipilvl.lua" />
+
+	<Script file="modules\nameplates\nameplates.lua"/>
+	<Script file="modules\nameplates\blacklist.lua"/>
+	<Script file="modules\nameplates\raid.lua"/>
+
+	<Script file="modules\bags\bags.lua"/>
+	<Script file="modules\loot\lootframe.lua"/>
+	<Script file="modules\loot\rollframe.lua"/>
+	<Script file="modules\maps\zonemap.lua"/>
+	<Script file="modules\blizzard\mirror.lua"/>
+	<Include file="modules\unitframes\templates\tankassist.xml"/>
+	<Script file="modules\unitframes\tags\tags.lua"/>
+
+	<Script file="modules\unitframes\layouts\asphyxia.lua"/>
+	<Script file="modules\unitframes\layouts\asphyxia2.lua"/>
+	<Script file="modules\unitframes\layouts\asphyxia3.lua"/>
+	<Script file="modules\unitframes\layouts\asphyxia4.lua"/>
+	<Script file="modules\unitframes\layouts\smelly.lua"/>
+
+	<Script file="modules\misc\altpowerbar.lua"/>
+	<Script file="modules\misc\threatbar.lua"/>
+	<Script file="modules\blizzard\achievements.lua"/>
+	<Script file="modules\misc\dropdownlist.lua"/>
+	<Script file="core\move.lua"/>
+	<Script file="modules\misc\raidutilities.lua"/>
+
+	<Script file="modules\skins\blizzard\achievement.lua"/>
+	<Script file="modules\skins\blizzard\achievementpopup.lua"/>
+	<Script file="modules\skins\blizzard\archeology.lua"/>
+	<Script file="modules\skins\blizzard\auction.lua"/>
+	<Script file="modules\skins\blizzard\bags.lua"/>
+	<Script file="modules\skins\blizzard\barbershop.lua"/>
+	<Script file="modules\skins\blizzard\bgscore.lua"/>
+	<Script file="modules\skins\blizzard\binding.lua"/>
+	<Script file="modules\skins\blizzard\bubbles.lua"/>
+	<Script file="modules\skins\blizzard\calendar.lua"/>
+	<Script file="modules\skins\blizzard\character.lua"/>
+	<Script file="modules\skins\blizzard\chat.lua"/>
+	<Script file="modules\skins\blizzard\colorpicker.lua"/>
+	<Script file="modules\skins\blizzard\debugtools.lua"/>
+	<Script file="modules\skins\blizzard\dressup.lua"/>
+	<Script file="modules\skins\blizzard\friends.lua"/>
+	<Script file="modules\skins\blizzard\glyph.lua"/>
+	<Script file="modules\skins\blizzard\gossip.lua"/>
+	<Script file="modules\skins\blizzard\greeting.lua"/>
+	<Script file="modules\skins\blizzard\guild.lua"/>
+	<Script file="modules\skins\blizzard\guildbank.lua"/>
+	<Script file="modules\skins\blizzard\guildcontrol.lua"/>
+	<Script file="modules\skins\blizzard\guildregister.lua"/>
+	<Script file="modules\skins\blizzard\help.lua"/>
+	<Script file="modules\skins\blizzard\inspect.lua"/>
+	<Script file="modules\skins\blizzard\itemtransmogrify.lua"/>
+	<Script file="modules\skins\blizzard\itemtext.lua"/>
+	<Script file="modules\skins\blizzard\journal.lua"/>
+	<Script file="modules\skins\blizzard\lfd.lua"/>
+	<Script file="modules\skins\blizzard\lfg.lua"/>
+	<Script file="modules\skins\blizzard\lfr.lua"/>
+	<Script file="modules\skins\blizzard\loot.lua"/>
+	<Script file="modules\skins\blizzard\macosx.lua"/>
+	<Script file="modules\skins\blizzard\macro.lua"/>
+	<Script file="modules\skins\blizzard\mail.lua"/>
+	<Script file="modules\skins\blizzard\merchant.lua"/>
+	<Script file="modules\skins\blizzard\opacity.lua"/>
+	<Script file="modules\skins\blizzard\options.lua"/>
+	<Script file="modules\skins\blizzard\others.lua"/>
+	<Script file="modules\skins\blizzard\petition.lua"/>
+	<Script file="modules\skins\blizzard\pvp.lua"/>
+	<Script file="modules\skins\blizzard\quest.lua"/>
+	<Script file="modules\skins\blizzard\questlog.lua"/>
+	<Script file="modules\skins\blizzard\raid.lua"/>
+	<Script file="modules\skins\blizzard\raidinfo.lua"/>
+	<Script file="modules\skins\blizzard\raidparent.lua"/>
+	<Script file="modules\skins\blizzard\reforging.lua"/>
+	<Script file="modules\skins\blizzard\socket.lua"/>
+	<Script file="modules\skins\blizzard\spellbook.lua"/>
+	<Script file="modules\skins\blizzard\tabard.lua"/>
+	<Script file="modules\skins\blizzard\talent.lua"/>
+	<Script file="modules\skins\blizzard\taxi.lua"/>
+	<Script file="modules\skins\blizzard\timemanager.lua"/>
+	<Script file="modules\skins\blizzard\trade.lua"/>
+	<Script file="modules\skins\blizzard\tradeskill.lua"/>
+	<Script file="modules\skins\blizzard\trainer.lua"/>
+	<Script file="modules\skins\blizzard\tutorial.lua"/>
+	<Script file="modules\skins\blizzard\voidstorage.lua"/>
+	<Script file="modules\skins\blizzard\worldmap.lua"/>
+	
+	<Script file="modules\skins\addons\bigwigs.lua"/>
+	<Script file="modules\skins\addons\omen.lua"/>
+	<Script file="modules\skins\addons\recount.lua"/>
+	<Script file="modules\skins\addons\skada.lua"/>
+	<Script file="modules\skins\addons\tinydps.lua"/>
+	<Script file="modules\skins\addons\dbm.lua"/>
+	<Script file="modules\skins\addons\dxe.lua"/>
+
+	<Script file="modules\extras\addonmanager.lua" />
+	<Script file="modules\extras\align.lua" />
+	<Script file="modules\extras\mail.lua" />
+	<Script file="modules\extras\bgannouncer.lua" />
+	<Script file="modules\extras\announce.lua" />
+	<Script file="modules\extras\sCombo.lua" />
+
+	<Script file="developer\test.lua"/>	
+</Ui>
