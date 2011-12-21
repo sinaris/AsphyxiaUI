@@ -1,1 +1,0 @@
-local S, C, L = unpack( Tukui )
