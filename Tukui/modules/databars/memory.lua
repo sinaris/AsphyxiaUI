@@ -79,7 +79,7 @@ local int = 10
 local function Update( self, t )
 	int = int - t
 
-	if int < 0 then
+	if( int < 0 ) then
 		RebuildAddonList( self )
 		local total = UpdateMemory()
 		Text:SetText( formatMem( total ) )

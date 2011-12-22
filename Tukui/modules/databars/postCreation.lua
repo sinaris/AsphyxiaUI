@@ -1,8 +1,8 @@
-local T, C, L = unpack(Tukui) -- Import: T - functions, constants, variables; C - config; L - locales
+local S, C, L = unpack( select( 2, ... ) )
 
-local pWidth, pHeight = C.databars.settings.width, C.databars.settings.height
-for i = 1, #T.databars do
-	if not T.databars[i]:IsShown() then
-		T.databars[i]:SetHeight(C.databars.settings.padding)
+local pWidth, pHeight = C["databars"]["settings"].width, C["databars"]["settings"].height
+for i = 1, #S.databars do
+	if not S.databars[i]:IsShown() then
+		S.databars[i]:SetHeight( C["databars"]["settings"].padding )
 	end
 end

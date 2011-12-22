@@ -143,9 +143,7 @@ local function UpdateAddons()
 		oldb = button
 	end
 end
-
 UpdateAddons()
-
 
 SLASH_ALOAD1 = "/am"
 SlashCmdList.ALOAD = function( msg )
