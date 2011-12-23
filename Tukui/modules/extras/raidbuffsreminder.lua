@@ -4,6 +4,7 @@
 
 local T, C, L = unpack(Tukui)
 
+if( C["buffreminder"].raidbuffreminder ~= true ) then return end
 -- Settings
 local specialbuff = 80398
 local position = { "LEFT", TukuiMinimap, "RIGHT", 2, 0 }

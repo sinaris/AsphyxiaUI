@@ -894,7 +894,7 @@ local function Shared( self, unit )
 				debuffs:SetWidth( 248 )
 				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", -18, 2 )
 				debuffs.size = 27
-				debuffs.num = 16
+				debuffs.num = 8
 			end
 
 			buffs.spacing = 2

@@ -235,6 +235,7 @@
 	<Script file="modules\skins\addons\dbm.lua"/>
 	<Script file="modules\skins\addons\dxe.lua"/>
 
+	<Script file="modules\extras\aAnnounce.lua" />
 	<Script file="modules\extras\addonmanager.lua" />
 	<Script file="modules\extras\align.lua" />
 	<Script file="modules\extras\mail.lua" />
