@@ -175,6 +175,9 @@ if T.client == "frFR" then
 
 	L.mount_wintergrasp = "Joug-d'hiver"
 
+	L.mail_need = "Need a mailbox."
+	L.mail_messages = "Messages"
+
 	L.core_autoinv_enable = "Invitation automatique : invite"
 	L.core_autoinv_enable_c = "Invitation automatique activée "
 	L.core_autoinv_disable = "Invitation automatique désactivée"

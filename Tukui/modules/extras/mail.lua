@@ -102,6 +102,8 @@ button:SetScript( "OnClick", openAll )
 button:SetScript( "OnEvent", onEvent )
 button2 = makeButton( "TakeCash_Button", GUILDCONTROL_OPTION16, 85, 25, 18, -408 )
 button2:SetScript( "OnClick", openAllCash )
+S.SkinButton( TakeAll_Button )
+S.SkinButton( TakeCash_Button )
 
 button:SetScript( "OnEnter", function()
 	GameTooltip:SetOwner( button, "ANCHOR_RIGHT" )

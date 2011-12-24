@@ -180,7 +180,10 @@ if T.client == "koKR" then
 	L.chat_invalidtarget = "잘못된 대상"
  
 	L.mount_wintergrasp = "겨울손아귀"
- 
+
+	L.mail_need = "Need a mailbox."
+	L.mail_messages = "Messages"
+
 	L.core_autoinv_enable = "자동초대 활성화: 초대"
 	L.core_autoinv_enable_c = "자동초대 활성화: "
 	L.core_autoinv_disable = "자동초대 비활성화"

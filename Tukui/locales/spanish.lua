@@ -173,7 +173,10 @@ if T.client == "esES" or T.client == "esMX" then
 	L.chat_invalidtarget = "Objetivo Invalido"
  
 	L.mount_wintergrasp = "Conquista De Invierno"
- 
+
+	L.mail_need = "Need a mailbox."
+	L.mail_messages = "Messages"
+
 	L.core_autoinv_enable = "Auto Invitar ON: invite"
 	L.core_autoinv_enable_c = "Auto Invitar ON: "
 	L.core_autoinv_disable = "Auto Invitar OFF"

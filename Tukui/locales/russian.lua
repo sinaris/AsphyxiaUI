@@ -173,7 +173,10 @@ if T.client == "ruRU" then
 	L.chat_invalidtarget = "Неверная цель"
  
 	L.mount_wintergrasp = "Озеро Ледяных Оков"
- 
+
+	L.mail_need = "Need a mailbox."
+	L.mail_messages = "Messages"
+
 	L.core_autoinv_enable = "Автоприглашение ВКЛ: invite"
 	L.core_autoinv_enable_c = "Автоприглашение ВКЛ: "
 	L.core_autoinv_disable = "Автоприглашение ВЫКЛ"

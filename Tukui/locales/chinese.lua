@@ -175,6 +175,9 @@ if T.client == "zhCN" then
 
 	L.mount_wintergrasp = "冬拥湖"
 
+	L.mail_need = "Need a mailbox."
+	L.mail_messages = "Messages"
+
 	L.core_autoinv_enable = "自动邀请开启：invite"
 	L.core_autoinv_enable_c = "自动邀请已开启"
 	L.core_autoinv_disable = "自动邀请已关闭"

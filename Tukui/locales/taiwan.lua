@@ -173,7 +173,10 @@ if T.client == "zhTW" then
 	L.chat_invalidtarget = "無效的目標"
  
 	L.mount_wintergrasp = "冬握湖"
- 
+
+	L.mail_need = "Need a mailbox."
+	L.mail_messages = "Messages"
+
 	L.core_autoinv_enable = "啟用自動邀請: invite"
 	L.core_autoinv_enable_c = "自動邀請功能已啟用: "
 	L.core_autoinv_disable = "自動邀請功能已關閉"

@@ -174,6 +174,9 @@ L.chat_invalidtarget = "Invalid Target"
 
 L.mount_wintergrasp = "Wintergrasp"
 
+L.mail_need = "Need a mailbox."
+L.mail_messages = "Messages"
+
 L.core_autoinv_enable = "Autoinvite ON: invite"
 L.core_autoinv_enable_c = "Autoinvite ON: "
 L.core_autoinv_disable = "Autoinvite OFF"
