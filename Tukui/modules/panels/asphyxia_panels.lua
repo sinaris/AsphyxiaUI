@@ -185,7 +185,7 @@ helpbutton.Text:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "H
 ---------------------------------------------------------------------------------------------
 -- animation function, help frame
 ---------------------------------------------------------------------------------------------
-TukuiAsphyxiaHelpFrame:Animate( 0, 500, 0.8 )
+--[[TukuiAsphyxiaHelpFrame:Animate( 0, 500, 0.8 )
 TukuiHelpButton:EnableMouse( true )
 TukuiHelpButton:SetScript( "OnClick", function( self )
 	if( InCombatLockdown() ) then print( ERR_NOT_IN_COMBAT ) return end
@@ -195,7 +195,7 @@ TukuiHelpButton:SetScript( "OnClick", function( self )
 	else
 		TukuiAsphyxiaHelpFrame:SlideIn()
 	end
-end )
+end )]]
 
 ---------------------------------------------------------------------------------------------
 -- invisbutton, another thing :O

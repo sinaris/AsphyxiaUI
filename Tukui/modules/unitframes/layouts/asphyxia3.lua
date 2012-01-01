@@ -656,6 +656,49 @@ local function Shared( self, unit )
 			self.Castbar.Icon = castbar.icon
 		end
 
+		if( C["unitframes"].vegeancebar == true ) then
+			local classcolor = RAID_CLASS_COLORS[S.myclass]
+			local vegeancebar = CreateFrame( "StatusBar", self:GetName() .. "_Vengeance", self )
+			vegeancebar:SetFrameStrata( "TOOLTIP" )
+			vegeancebar:SetFrameLevel( 20 )
+			vegeancebar:Point( "TOPLEFT", TukuiInfoCenterLeft, 2, -2 )
+			vegeancebar:Point( "BOTTOMRIGHT", TukuiInfoCenterLeft, -2, 2 )
+			vegeancebar:SetStatusBarTexture( C["media"].normTex )
+			vegeancebar:GetStatusBarTexture():SetHorizTile( false )
+			vegeancebar:SetStatusBarColor( classcolor.r, classcolor.g, classcolor.b, 1 )
+			vegeancebar:SetTemplate( "Default", true )
+			vegeancebar:SetBackdropBorderColor( 0, 0, 0, 0 )
+			vegeancebar.Text = S.SetFontString( vegeancebar, C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+			vegeancebar.Text:Point( "CENTER", TukuiInfoCenterLeft, "CENTER", 0, 1 )
+
+			self.Vengeance = vegeancebar
+		end
+
+		if( C["unitframes"].swingtimer == true ) then
+			local swingtimer = CreateFrame( "StatusBar", self:GetName() .. "_Swing", self )
+			swingtimer:SetFrameLevel( 2 )
+
+			swingtimer:Point( "BOTTOMRIGHT", TukuiBar1, "TOPRIGHT", -2, 32 )
+			swingtimer:SetWidth( TukuiBar1:GetWidth() - 4 )
+			swingtimer:Height( 1 )
+			swingtimer:SetStatusBarTexture( C["media"].normTex )
+			swingtimer:GetStatusBarTexture():SetHorizTile( false )
+			swingtimer:SetStatusBarColor( C["media"].bordercolor )
+
+			swingtimer.bg = CreateFrame( "Frame", nil, swingtimer )
+			swingtimer.bg:Point( "TOPLEFT", -2, 2 )
+			swingtimer.bg:Point( "BOTTOMRIGHT", 2, -2 )
+			swingtimer.bg:SetFrameLevel( swingtimer:GetFrameLevel() - 1 )
+			swingtimer.bg:SetTemplate( "Default", true )
+			swingtimer.bg:CreateShadow( "Default" )
+
+			swingtimer.disableMelee = false
+			swingtimer.disableRanged = false
+			swingtimer.hideOoc = true
+
+			self.Swing = swingtimer
+		end
+
 		-----------------------
 		-- combat feedback
 		-----------------------
@@ -1193,21 +1236,6 @@ local function Shared( self, unit )
 		end
 
 		-----------------------
-		-- portraits
-		-----------------------
-		if( C["unitframes"].charportrait == true ) then
-			local portrait = CreateFrame( "PlayerModel", nil, health )
-			portrait:SetFrameLevel( health:GetFrameLevel() )
-			portrait.PostUpdate = function( self )
-				self:SetAlpha( 0 )
-				self:SetAlpha( .15 )
-			end
-			portrait:SetAllPoints( health )
-			table.insert( self.__elements, S.HidePortrait )
-			self.Portrait = portrait
-		end
-
-		-----------------------
 		-- buffs, debuffs
 		-----------------------
 		if( C["unitframes"].totdebuffs == true and S.lowversion ~= true ) then
@@ -1337,21 +1365,6 @@ local function Shared( self, unit )
 
 			self.Power = power
 			self.Power.bg = powerBackground
-		end
-
-		-----------------------
-		-- portraits
-		-----------------------
-		if( C["unitframes"].charportrait == true ) then
-			local portrait = CreateFrame( "PlayerModel", nil, health )
-			portrait:SetFrameLevel( health:GetFrameLevel() )
-			portrait.PostUpdate = function( self )
-				self:SetAlpha( 0 )
-				self:SetAlpha( .15 )
-			end
-			portrait:SetAllPoints( health )
-			table.insert( self.__elements, S.HidePortrait )
-			self.Portrait = portrait
 		end
 
 		self:RegisterEvent( "UNIT_PET", S.updateAllElements )
@@ -1486,7 +1499,7 @@ local function Shared( self, unit )
 		healthBackground:SetAllPoints()
 		healthBackground:SetTexture( 0, 0, 0 )
 
-		health.value = S.SetFontString( health, font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		health.value = S.SetFontString( health, S.SetUserFont() )
 		health.value:Point( "LEFT", 2, 1 )
 		health.PostUpdate = S.PostUpdateHealth
 
@@ -1512,7 +1525,7 @@ local function Shared( self, unit )
 		local Name = health:CreateFontString( nil, "OVERLAY" )
 		Name:SetPoint( "CENTER", health, "CENTER", 0, 0 )
 		Name:SetJustifyH( "CENTER" )
-		Name:SetFont( font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		Name:SetFont( S.SetUserFont() )
 		Name:SetShadowColor( 0, 0, 0 )
 		Name:SetShadowOffset( 1.25, -1.25 )
 		self:Tag( Name, "[Tukui:getnamecolor][Tukui:nameshort]" )
@@ -1547,7 +1560,7 @@ local function Shared( self, unit )
 		powerBackground:SetTexture( normTex )
 		powerBackground.multiplier = 0.3
 
-		power.value = S.SetFontString( health, font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		power.value = S.SetFontString( health, S.SetUserFont() )
 		power.value:Point( "RIGHT", -2, 1 )
 		power.PreUpdate = S.PreUpdatePower
 		power.PostUpdate = S.PostUpdatePower
@@ -1591,13 +1604,13 @@ local function Shared( self, unit )
 		castbar.bg:Point( "BOTTOMRIGHT", 2, -2 )
 		castbar.bg:SetFrameLevel( 5 )
 
-		castbar.time = S.SetFontString( castbar, font, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+		castbar.time = S.SetFontString( castbar, S.SetUserFont() )
 		castbar.time:Point( "RIGHT", castbar, "RIGHT", -4, 1 )
 		castbar.time:SetTextColor( 0, 4, 0 )
 		castbar.time:SetJustifyH( "RIGHT" )
 		castbar.CustomTimeText = S.CustomCastTimeText
 
-		castbar.Text = S.SetFontString( castbar, font, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+		castbar.Text = S.SetFontString( castbar, S.SetUserFont() )
 		castbar.Text:SetPoint( "LEFT", castbar, "LEFT", 4, 1 )
 		castbar.Text:SetTextColor( 0.3, 0.2, 1 )
 		castbar.Text:Width( 100 )
@@ -1657,7 +1670,7 @@ local function Shared( self, unit )
 		healthBackground:SetAllPoints()
 		healthBackground:SetTexture( 0, 0, 0 )
 
-		health.value = S.SetFontString( health, font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		health.value = S.SetFontString( health, S.SetUserFont() )
 		health.value:Point( "LEFT", 2, 1 )
 		health.PostUpdate = S.PostUpdateHealth
 
@@ -1683,7 +1696,7 @@ local function Shared( self, unit )
 		local Name = health:CreateFontString( nil, "OVERLAY" )
 		Name:SetPoint( "CENTER", health, "CENTER", 0, 0 )
 		Name:SetJustifyH( "CENTER" )
-		Name:SetFont( font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		Name:SetFont( S.SetUserFont() )
 		Name:SetShadowColor( 0, 0, 0 )
 		Name:SetShadowOffset( 1.25, -1.25 )
 		self:Tag( Name, "[Tukui:getnamecolor][Tukui:nameshort]" )
@@ -1718,7 +1731,7 @@ local function Shared( self, unit )
 		powerBackground:SetTexture( normTex )
 		powerBackground.multiplier = 0.3
 
-		power.value = S.SetFontString( health, font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		power.value = S.SetFontString( health, S.SetUserFont() )
 		power.value:Point( "RIGHT", -2, 1 )
 		power.PreUpdate = S.PreUpdatePower
 		power.PostUpdate = S.PostUpdatePower
@@ -1762,13 +1775,13 @@ local function Shared( self, unit )
 		castbar.bg:Point( "BOTTOMRIGHT", 2, -2 )
 		castbar.bg:SetFrameLevel( 5 )
 
-		castbar.time = S.SetFontString( castbar, font, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+		castbar.time = S.SetFontString( castbar, S.SetUserFont() )
 		castbar.time:Point( "RIGHT", castbar, "RIGHT", -4, 1 )
 		castbar.time:SetTextColor( 0, 4, 0 )
 		castbar.time:SetJustifyH( "RIGHT" )
 		castbar.CustomTimeText = S.CustomCastTimeText
 
-		castbar.Text = S.SetFontString( castbar, font, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+		castbar.Text = S.SetFontString( castbar, S.SetUserFont() )
 		castbar.Text:SetPoint( "LEFT", castbar, "LEFT", 4, 1 )
 		castbar.Text:SetTextColor( 0.3, 0.2, 1 )
 		castbar.Text:Width( 100 )
@@ -1830,7 +1843,7 @@ local function Shared( self, unit )
 		healthBackground:SetAllPoints()
 		healthBackground:SetTexture( 0, 0, 0 )
 
-		health.value = S.SetFontString( health, font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		health.value = S.SetFontString( health, S.SetUserFont() )
 		health.value:Point( "LEFT", 2, 0.5 )
 		health.PostUpdate = S.PostUpdateHealth
 
@@ -1856,7 +1869,7 @@ local function Shared( self, unit )
 		local Name = health:CreateFontString( nil, "OVERLAY" )
 		Name:SetPoint( "CENTER", health, "CENTER", 0, 1 )
 		Name:SetJustifyH( "CENTER" )
-		Name:SetFont( font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		Name:SetFont( S.SetUserFont() )
 		Name:SetShadowColor( 0, 0, 0 )
 		Name:SetShadowOffset( 1.25, -1.25 )
 		Name.frequentUpdates = 0.2
@@ -1892,7 +1905,7 @@ local function Shared( self, unit )
 		powerBackground:SetTexture( normTex )
 		powerBackground.multiplier = 0.3
 
-		power.value = S.SetFontString( health, font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		power.value = S.SetFontString( health, S.SetUserFont() )
 		power.value:Point( "RIGHT", -2, 0.5 )
 		power.PreUpdate = S.PreUpdatePower
 		power.PostUpdate = S.PostUpdatePower
@@ -1956,13 +1969,13 @@ local function Shared( self, unit )
 		castbar.bg:Point( "BOTTOMRIGHT", 2, -2 )
 		castbar.bg:SetFrameLevel( 5 )
 
-		castbar.time = S.SetFontString( castbar, font, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+		castbar.time = S.SetFontString( castbar, S.SetUserFont() )
 		castbar.time:Point( "RIGHT", castbar, "RIGHT", -4, 1 )
 		castbar.time:SetTextColor( 0, 4, 0 )
 		castbar.time:SetJustifyH( "RIGHT" )
 		castbar.CustomTimeText = S.CustomCastTimeText
 
-		castbar.Text = S.SetFontString( castbar, font, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+		castbar.Text = S.SetFontString( castbar, S.SetUserFont() )
 		castbar.Text:Point( "LEFT", castbar, "LEFT", 4, 1 )
 		castbar.Text:SetTextColor( 0.3, 0.2, 1 )
 		castbar.Text:Width( 100 )
@@ -2024,7 +2037,7 @@ local function Shared( self, unit )
 		healthBackground:SetAllPoints()
 		healthBackground:SetTexture( 0, 0, 0 )
 
-		health.value = S.SetFontString( health, font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		health.value = S.SetFontString( health, S.SetUserFont() )
 		health.value:Point( "LEFT", 2, 0.5 )
 		health.PostUpdate = S.PostUpdateHealth
 
@@ -2050,7 +2063,7 @@ local function Shared( self, unit )
 		local Name = health:CreateFontString( nil, "OVERLAY" )
 		Name:SetPoint( "CENTER", health, "CENTER", 0, 1 )
 		Name:SetJustifyH( "CENTER" )
-		Name:SetFont( font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		Name:SetFont( S.SetUserFont() )
 		Name:SetShadowColor( 0, 0, 0 )
 		Name:SetShadowOffset( 1.25, -1.25 )
 		Name.frequentUpdates = 0.2
@@ -2086,7 +2099,7 @@ local function Shared( self, unit )
 		powerBackground:SetTexture( normTex )
 		powerBackground.multiplier = 0.3
 
-		power.value = S.SetFontString( health, font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		power.value = S.SetFontString( health, S.SetUserFont() )
 		power.value:Point( "RIGHT", -2, 0.5 )
 		power.PreUpdate = S.PreUpdatePower
 		power.PostUpdate = S.PostUpdatePower
@@ -2164,13 +2177,13 @@ local function Shared( self, unit )
 		castbar.bg:Point( "BOTTOMRIGHT", 2, -2 )
 		castbar.bg:SetFrameLevel( 5 )
 
-		castbar.time = S.SetFontString( castbar, font, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+		castbar.time = S.SetFontString( castbar, S.SetUserFont() )
 		castbar.time:Point( "RIGHT", castbar, "RIGHT", -4, 1 )
 		castbar.time:SetTextColor( 0, 4, 0 )
 		castbar.time:SetJustifyH( "RIGHT" )
 		castbar.CustomTimeText = S.CustomCastTimeText
 
-		castbar.Text = S.SetFontString( castbar, font, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+		castbar.Text = S.SetFontString( castbar, S.SetUserFont() )
 		castbar.Text:Point( "LEFT", castbar, "LEFT", 4, 1 )
 		castbar.Text:SetTextColor( 0.3, 0.2, 1 )
 		castbar.Text:Width( 100 )
@@ -2247,7 +2260,7 @@ local function Shared( self, unit )
 		local Name = health:CreateFontString( nil, "OVERLAY" )
 		Name:SetPoint( "CENTER", health, "CENTER", 0, 1 )
 		Name:SetJustifyH( "CENTER" )
-		Name:SetFont( font, C["datatext"].fontsize + 1, "MONOCHROMEOUTLINE" )
+		Name:SetFont( S.SetUserFont() )
 		Name:SetShadowColor( 0, 0, 0 )
 		Name:SetShadowOffset( 1.25, -1.25 )
 		self:Tag( Name, "[Tukui:getnamecolor][Tukui:nameshort]" )

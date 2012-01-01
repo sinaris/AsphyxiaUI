@@ -1,14 +1,38 @@
 local S, C, L = unpack( select( 2, ... ) )
 
+if( C["asphyxia"].screensaver ~= true ) then return end
+
+local color = RAID_CLASS_COLORS[S.myclass]
+
 local AFKPanel = CreateFrame( "Frame", nil, UIParent )
 AFKPanel:CreatePanel( "Default", 1, 1, "CENTER", UIParent, "CENTER", 0, 0 )
 AFKPanel:ClearAllPoints()
 AFKPanel:SetPoint( "TOPLEFT", UIParent, "TOPLEFT", -2, 2 )
 AFKPanel:SetPoint( "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", 2, -2 )
-AFKPanel:SetTemplate( "Transparent" )
-AFKPanel:SetFrameLevel( 129 )
+--AFKPanel:SetTemplate( "Transparent" )
+AFKPanel:SetFrameLevel( 128 )
 AFKPanel:SetFrameStrata( "TOOLTIP" )
 AFKPanel:Hide()
+
+local AFKModel = CreateFrame( "PlayerModel", nil, AFKPanel )
+AFKModel:SetPoint( "TOPLEFT" )
+AFKModel:SetPoint( "BOTTOMLEFT" )
+AFKModel:SetPoint( "TOPRIGHT", UIParent, "TOP" )
+AFKModel:SetPoint( "BOTTOMLEFT", UIParent, "BOTTOM" )
+AFKModel:SetUnit( "player" )
+AFKModel:SetFacing( 0.65 )
+AFKModel:SetFrameLevel( AFKPanel:GetFrameLevel() + 1 )
+
+AFKModel.Text = S.SetFontString( AFKPanel, C["media"].asphyxiafont, 72, "MONOCHROMEOUTLINE" )
+AFKModel.Text:Point( "TOP", AFKPanel, "TOP", 0, -80 )
+AFKModel.Text:SetText( S.myname  )
+AFKModel.Text:SetTextColor( color.r, color.g, color.b )
+AFKModel.Text:SetPoint( "CENTER" )
+
+AFKModel.Text = S.SetFontString( AFKPanel, C["media"].asphyxiafont, 72, "MONOCHROMEOUTLINE" )
+AFKModel.Text:Point( "TOP", AFKPanel, "TOP", 0, -150 )
+AFKModel.Text:SetText( S.level .. " " .. S.myrace .. " " .. S.myclass  )
+AFKModel.Text:SetPoint( "CENTER" )
 
 AFKPanel.Text = S.SetFontString( AFKPanel, C["media"].asphyxiafont, 72, "MONOCHROMEOUTLINE" )
 AFKPanel.Text:Point( "CENTER", AFKPanel, "CENTER", 0, 0 )

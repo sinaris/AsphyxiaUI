@@ -1,10 +1,11 @@
 ﻿local S, C, L = unpack( select( 2, ... ) )
 
 C["asphyxia"] = {
-	["layout"] = "asphyxia4",
+	["layout"] = "asphyxia",
 	["uf_fontsize"] = 10,
 	["locationpanel"] = true,
 	["cp_onmouseover"] = false,
+	["screensaver"] = false,
 }
 
 C["Addon_Skins"] = {
@@ -88,6 +89,12 @@ C["unitframes"] = {
 	
 	-- class bar
 	["classbar"] = true,                                -- enable tukui classbar over player unit
+
+	-- swing timer
+	["swingtimer"] = false,								-- Development, has some PLAYER_ENTERING_WORLD Bugs
+
+	-- vegeance bar
+	["vegeancebar"] = true,
 }
 
 C["arena"] = {

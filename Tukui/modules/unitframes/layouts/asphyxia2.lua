@@ -1344,21 +1344,6 @@ local function Shared( self, unit )
 			self.Power.bg = powerBackground
 		end
 
-		-----------------------
-		-- portraits
-		-----------------------
-		if( C["unitframes"].charportrait == true ) then
-			local portrait = CreateFrame( "PlayerModel", nil, health )
-			portrait:SetFrameLevel( health:GetFrameLevel() )
-			portrait.PostUpdate = function( self )
-				self:SetAlpha( 0 )
-				self:SetAlpha( .15 )
-			end
-			portrait:SetAllPoints( health )
-			table.insert( self.__elements, S.HidePortrait )
-			self.Portrait = portrait
-		end
-
 		self:RegisterEvent( "UNIT_PET", S.updateAllElements )
 	end
 

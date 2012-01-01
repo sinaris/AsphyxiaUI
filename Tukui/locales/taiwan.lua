@@ -198,18 +198,6 @@ if T.client == "zhTW" then
 	L.core_uihelp11 = "|cffFF0000/ainv|r - 啟用密語自動邀請, 您可以設定輸入`/ainv myword`以設置您的密語關鍵字"
 	L.core_uihelp100 = "(想看更多? 向上拉吧! ...)"
 
-	L.core_uihelp20 = "|cff00AAFFAsphyxiaUI - version:|r 5.0 - Help." -- TRANS NEEDED
-	L.core_uihelp21 = "\n\n|cffFF0000AsphyxiaUI slash commands:\n|cffEAC117/scp|r - Unlock sCombo bar to move." -- TRANS NEEDED
-	L.core_uihelp22 = "\n|cffEAC117/testui uf|r or |cffEAC117/testui unitframes|r -  Test mode for unitframes." -- TRANS NEEDED
-	L.core_uihelp23 = "\n|cffEAC117/testui a|r or |cffEAC117/testui arena|r - Test mode for arenaframes.\n|cffEAC117/testui b|r or |cffEAC117/testui boss|r - Test mode for bossframes.\n|cffEAC117/ali|r - Alignment grid." -- TRANS NEEDED
-	L.core_uihelp24 = "\n\n|cffFF0000AsphyxiaUI unitframe layouts:|r \nChoose from (|cffEAC117asphyxia|r, |cffEAC117asphyxia2|r, |cffEAC117asphyxia3|r, |cffEAC117asphyxia4|r or |cffEAC117smelly|r)" -- TRANS NEEDED
-	L.core_uihelp25 = "\n\n|cffFF0000AsphyxiaUI control panel:|r" -- TRANS NEEDED
-	L.core_uihelp26 = "\nBrings up an ingame menu to access Actionbar configuration, Addon manager, ConfigUI, etc." -- TRANS NEEDED
-	L.core_uihelp27 = "\nButtons order from top to bottom: Actionbar Config - AddOns - Config UI - Move UI." -- TRANS NEEDED
-	L.core_uihelp28 = "\n\n|cffFF0000AsphyxiaUI mouse over buttons:|r \nMouseover buttons underneath the right chat copy icon:\nCurrency - Reputation - Actionbar Datatext Panel Toggle." -- TRANS NEEDED
-	L.core_uihelp29 = "\n\n|cffFF0000AsphyxiaUI minimap toggle:|r \nButton next to minimap buffs toggles the minimap on and off." -- TRANS NEEDED
-	L.core_uihelp30 = "\n\n|cffFF0000FIRST TIME PLEASE READ THE INSTALLATION GUIDE.|r" -- TRANS NEEDED
-
 	L.core_controlpanel_controlpanel_header = "Control Panel Menu" -- TRANS NEEDED
 	L.core_controlpanel_controlpanel_abconfig = "Actionbar Config" -- TRANS NEEDED
 	L.core_controlpanel_controlpanel_configui = "Config UI" -- TRANS NEEDED

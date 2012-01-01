@@ -27,10 +27,12 @@
 	<Script file="modules\unitframes\plugins\oUF_MovableFrames\movable.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_Reputation\oUF_Reputation.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_Smooth\oUF_Smooth.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_Swing\oUF_Swing.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_TotemBar\oUF_TotemBar.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_Trinkets\oUF_Trinkets.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_RaidDebuffs\oUF_RaidDebuffs.lua"/>	
-	<Script file="modules\unitframes\plugins\oUF_WeakenedSoul\oUF_WeakenedSoul.lua"/>	
+	<Script file="modules\unitframes\plugins\oUF_WeakenedSoul\oUF_WeakenedSoul.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_Vengeance\oUF_Vengeance.lua"/>
 	<Script file="modules\unitframes\templates\colors.lua"/>
 
 	<Script file="core\video.lua"/>
@@ -236,6 +238,7 @@
 	<Script file="modules\skins\addons\dxe.lua"/>
 
 	<Script file="modules\extras\aAnnounce.lua" />
+	<Script file="modules\extras\aAsphyxiaUI.lua" />
 	<Script file="modules\extras\addonmanager.lua" />
 	<Script file="modules\extras\align.lua" />
 	<Script file="modules\extras\mail.lua" />
