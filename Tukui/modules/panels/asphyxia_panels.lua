@@ -183,21 +183,6 @@ helpbutton.Text:Point( "CENTER", helpbutton, "CENTER", 1.5, 1 )
 helpbutton.Text:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "H" )
 
 ---------------------------------------------------------------------------------------------
--- animation function, help frame
----------------------------------------------------------------------------------------------
---[[TukuiAsphyxiaHelpFrame:Animate( 0, 500, 0.8 )
-TukuiHelpButton:EnableMouse( true )
-TukuiHelpButton:SetScript( "OnClick", function( self )
-	if( InCombatLockdown() ) then print( ERR_NOT_IN_COMBAT ) return end
-
-	if( TukuiAsphyxiaHelpFrame:IsVisible() ) then
-		TukuiAsphyxiaHelpFrame:SlideOut()
-	else
-		TukuiAsphyxiaHelpFrame:SlideIn()
-	end
-end )]]
-
----------------------------------------------------------------------------------------------
 -- invisbutton, another thing :O
 ---------------------------------------------------------------------------------------------
 local invisButton = CreateFrame( "Frame", "invisButton", UIParent )
