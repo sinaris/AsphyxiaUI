@@ -40,7 +40,7 @@ AsphyxiaUIMainFrameTitle:CreateShadow( "Default" )
 local AsphyxiaUIMainFrameTitleText = AsphyxiaUIMainFrameTitle:CreateFontString( nil, "OVERLAY" )
 AsphyxiaUIMainFrameTitleText:SetFont( C["media"].font, 16, "THINOUTLINE" )
 AsphyxiaUIMainFrameTitleText:SetPoint( "CENTER", AsphyxiaUIMainFrameTitle, 0, 0 )
-AsphyxiaUIMainFrameTitleText:SetText( "|cff00AAFFAsphyxiaUI " .. S.xversion .. "|r - Help" )
+AsphyxiaUIMainFrameTitleText:SetText( L.core_asphyxiauihelp_header )
 
 ---------------------------------------------------------------------------------------------
 -- main frame - navigation
@@ -49,6 +49,12 @@ local AsphyxiaUIMainFrameNavigation = CreateFrame( "Frame", "AsphyxiaUIMainFrame
 AsphyxiaUIMainFrameNavigation:SetSize( 180, 342 )
 AsphyxiaUIMainFrameNavigation:SetPoint( "LEFT", 4, 0 )
 AsphyxiaUIMainFrameNavigation:SetTemplate( "Transparent" )
+
+local AsphyxiaUIMainFrameNavigationText = AsphyxiaUIMainFrameNavigation:CreateFontString( nil, "OVERLAY" )
+AsphyxiaUIMainFrameNavigationText:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+AsphyxiaUIMainFrameNavigationText:SetPoint( "BOTTOM", AsphyxiaUIMainFrameNavigation, "BOTTOM", 0, 4 )
+AsphyxiaUIMainFrameNavigationText:SetJustifyH( "CENTER" )
+AsphyxiaUIMainFrameNavigationText:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_revision )
 
 ---------------------------------------------------------------------------------------------
 -- main frame - content
@@ -59,8 +65,8 @@ AsphyxiaUIMainFrameContent:SetPoint( "RIGHT", -4, 0 )
 AsphyxiaUIMainFrameContent:SetTemplate( "Transparent" )
 
 local AsphyxiaUIMainFrameContentScrollFrame = CreateFrame( "ScrollFrame", "AsphyxiaUIMainFrameContentScrollFrame", AsphyxiaUIMainFrameContent, "UIPanelScrollFrameTemplate" )
-AsphyxiaUIMainFrameContentScrollFrame:SetPoint( "TOPLEFT", AsphyxiaUIMainFrameContent, "TOPLEFT", 10, -10 )
-AsphyxiaUIMainFrameContentScrollFrame:SetPoint( "BOTTOMRIGHT", AsphyxiaUIMainFrameContent, "BOTTOMRIGHT", -30, 10 )
+AsphyxiaUIMainFrameContentScrollFrame:SetPoint( "TOPLEFT", AsphyxiaUIMainFrameContent, "TOPLEFT", 4, -4 )
+AsphyxiaUIMainFrameContentScrollFrame:SetPoint( "BOTTOMRIGHT", AsphyxiaUIMainFrameContent, "BOTTOMRIGHT", -27, 4 )
 S.SkinScrollBar( AsphyxiaUIMainFrameContentScrollFrameScrollBar )
 
 local AsphyxiaUIMainFrameContentScrollFrameBackground = CreateFrame( "Frame", "AsphyxiaUIMainFrameContentScrollFrameBackground", AsphyxiaUIMainFrameContentScrollFrame )
@@ -77,7 +83,7 @@ local AsphyxiaUIMainFrameContentText1 = AsphyxiaUIMainFrameContentScrollFrameBac
 AsphyxiaUIMainFrameContentText1:SetJustifyH( "LEFT" )
 AsphyxiaUIMainFrameContentText1:SetFont( C["media"].font, 12, "THINOUTLINE" )
 AsphyxiaUIMainFrameContentText1:SetWidth( AsphyxiaUIMainFrameContentScrollFrameBackground:GetWidth() - 20 )
-AsphyxiaUIMainFrameContentText1:SetPoint( "TOPLEFT", AsphyxiaUIMainFrameContentScrollFrameBackground, "TOPLEFT", 20, -45 )
+AsphyxiaUIMainFrameContentText1:SetPoint( "TOPLEFT", AsphyxiaUIMainFrameContentScrollFrameBackground, "TOPLEFT", 10, -45 )
 
 local AsphyxiaUIMainFrameContentText2 = AsphyxiaUIMainFrameContentScrollFrameBackground:CreateFontString( nil, "OVERLAY" )
 AsphyxiaUIMainFrameContentText2:SetJustifyH( "LEFT" )
@@ -97,6 +103,18 @@ AsphyxiaUIMainFrameContentText4:SetFont( C["media"].font, 12, "THINOUTLINE" )
 AsphyxiaUIMainFrameContentText4:SetWidth( AsphyxiaUIMainFrameContentScrollFrameBackground:GetWidth() - 30 )
 AsphyxiaUIMainFrameContentText4:SetPoint( "TOPLEFT", AsphyxiaUIMainFrameContentText3, "BOTTOMLEFT", 0, -20 )
 
+local AsphyxiaUIMainFrameContentText5 = AsphyxiaUIMainFrameContentScrollFrameBackground:CreateFontString( nil, "OVERLAY" )
+AsphyxiaUIMainFrameContentText5:SetJustifyH( "LEFT" )
+AsphyxiaUIMainFrameContentText5:SetFont( C["media"].font, 12, "THINOUTLINE" )
+AsphyxiaUIMainFrameContentText5:SetWidth( AsphyxiaUIMainFrameContentScrollFrameBackground:GetWidth() - 30 )
+AsphyxiaUIMainFrameContentText5:SetPoint( "TOPLEFT", AsphyxiaUIMainFrameContentText4, "BOTTOMLEFT", 0, -20 )
+
+local AsphyxiaUIMainFrameContentText6 = AsphyxiaUIMainFrameContentScrollFrameBackground:CreateFontString( nil, "OVERLAY" )
+AsphyxiaUIMainFrameContentText6:SetJustifyH( "LEFT" )
+AsphyxiaUIMainFrameContentText6:SetFont( C["media"].font, 12, "THINOUTLINE" )
+AsphyxiaUIMainFrameContentText6:SetWidth( AsphyxiaUIMainFrameContentScrollFrameBackground:GetWidth() - 30 )
+AsphyxiaUIMainFrameContentText6:SetPoint( "TOPLEFT", AsphyxiaUIMainFrameContentText5, "BOTTOMLEFT", 0, -20 )
+
 ---------------------------------------------------------------------------------------------
 -- main frame - navigation - buttons
 ---------------------------------------------------------------------------------------------
@@ -113,24 +131,24 @@ local AsphyxiaUIMainFrameNavigationButtonAttributes = {
 }
 
 local AsphyxiaUIMainFrameNavigationButtonTexts = {
-	[1] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Information" },
-	[2] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Unitframes" },
-	[3] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Actionbars" },
-	[4] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Panels, Nameplates" },
-	[5] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Minimap, Chat" },
-	[6] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Extra AddOns, Skins" },
-	[7] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Reported Issues" },
-	[8] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Credits" },
-	[9] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "Donation" },
+	[1] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button1 },
+	[2] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button2 },
+	[3] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button3 },
+	[4] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button4 },
+	[5] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button5 },
+	[6] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button6 },
+	[7] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button7 },
+	[8] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button8 },
+	[9] = { S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. L.core_asphyxiauihelp_button9 },
 }
 
 local AsphyxiaUIMainFrameNavigationButton = CreateFrame( "Button", "AsphyxiaUIMainFrameNavigationButton", AsphyxiaUIMainFrameNavigation )
 for i = 1, 9 do
 	AsphyxiaUIMainFrameNavigationButton[i] = CreateFrame( "Button", "AsphyxiaUIMainFrameNavigationButton" .. i, AsphyxiaUIMainFrameNavigation, "SecureActionButtonTemplate" )
 	AsphyxiaUIMainFrameNavigationButton[i]:CreatePanel( "Default", AsphyxiaUIMainFrameNavigation:GetWidth() - 8, 24, "TOP", AsphyxiaUIMainFrameNavigation, "TOP", 0, -4, true )
-	AsphyxiaUIMainFrameNavigationButton[i].Text = S.SetFontString( AsphyxiaUIMainFrameNavigationButton[i], C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+	AsphyxiaUIMainFrameNavigationButton[i].Text = S.SetFontString( AsphyxiaUIMainFrameNavigationButton[i], C["media"].font, C["datatext"].fontsize, "THINOUTLINE" )
 	AsphyxiaUIMainFrameNavigationButton[i]:SetFrameLevel( AsphyxiaUIMainFrameNavigation:GetFrameLevel() + 1 )
-	AsphyxiaUIMainFrameNavigationButton[i].Text:Point( "CENTER", AsphyxiaUIMainFrameNavigationButton[i], "CENTER", 0, 1 )
+	AsphyxiaUIMainFrameNavigationButton[i].Text:Point( "CENTER", AsphyxiaUIMainFrameNavigationButton[i], "CENTER", 0, 0 )
 	AsphyxiaUIMainFrameNavigationButton[i].Text:SetText( unpack( AsphyxiaUIMainFrameNavigationButtonTexts[i] ) )
 
 	if( i == 1 ) then
@@ -156,83 +174,103 @@ ahelpcontentclose:SetScript( "OnClick", function()
 end )
 
 local ahelpcontent = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "" )
-	AsphyxiaUIMainFrameContentText1:SetText( "Please select a category." )
-	AsphyxiaUIMainFrameContentText2:SetText( "" )
-	AsphyxiaUIMainFrameContentText3:SetText( "" )
-	AsphyxiaUIMainFrameContentText4:SetText( "" )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry0_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry0_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry0_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry0_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry0_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry0_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry0_line6 )
 end
 
 local ahelp9content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Donation" )
-	AsphyxiaUIMainFrameContentText1:SetText( "It's not easy to create a new UI, giving support for all other users and pushing updates as much as i can.\nFeel free to give some donations for this UI.\n\nYou can do this here:\n|cff00FFFFhttp://www.tukui.org/forums/topic.php?id=18539|r" )
-	AsphyxiaUIMainFrameContentText2:SetText( "I have to say Thank you, for the folowing donators:" )
-	AsphyxiaUIMainFrameContentText3:SetText( "|cff00AAFFMastamage\nCalaglin|r" )
-	AsphyxiaUIMainFrameContentText4:SetText( "" )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry9_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry9_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry9_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry9_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry9_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry9_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry9_line6 )
 end
 
 local ahelp8content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Credits" )
-	AsphyxiaUIMainFrameContentText1:SetText( "First: Asphyxia, the creator of this UI. thank you for this awesome job. I hope the 'new' AsphyxiaUI is that what you want." )
-	AsphyxiaUIMainFrameContentText2:SetText( "Some other credits goto: Caith, Caellian, Shestak, Haste, Tekkub, Alza, Roth, P3lim, Tulla, Hungtar, hankthetank, Ishtara, Haleth and others..." )
-	AsphyxiaUIMainFrameContentText3:SetText( "Special thanks to: Asi, my forum bitch! xD" )
-	AsphyxiaUIMainFrameContentText4:SetText( "If i missed someone, let me know it and i will add them onto the list." )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry8_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry8_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry8_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry8_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry8_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry8_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry8_line6 )
 end
 
 local ahelp7content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Reported Issues" )
-	AsphyxiaUIMainFrameContentText1:SetText( "I worked hard, very hard. So, i know that there are some issues into the AsphyxiaUI." )
-	AsphyxiaUIMainFrameContentText2:SetText( "If you founds something the looks ugly or if you think that can be a bug, errors or whatever, let me know about them." )
-	AsphyxiaUIMainFrameContentText3:SetText( "You can post your erros here (please read the guidline to report bugs and erros):" )
-	AsphyxiaUIMainFrameContentText4:SetText( "|cff00FFFFhttp://www.tukui.org/forums/topic.php?id=18608|r" )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry7_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry7_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry7_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry7_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry7_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry7_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry7_line6 )
 end
 
 local ahelp6content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Extra AddOns, Skins" )
-	AsphyxiaUIMainFrameContentText1:SetText( "There are some extra addons included into AsphyxiaUI. You will find some credits and other informations about this under the 'Credits' section." )
-	AsphyxiaUIMainFrameContentText2:SetText( "AsphyxiaUI has some nice and cool looking skins for the following AddOns:\nBalancePowerTracker, BigWigs, DeadlyBossMods, DeuxVox, Omen, Recount, Skada and TinyDPS." )
-	AsphyxiaUIMainFrameContentText3:SetText( "You can change these settings by follow these steps:\n\nOpen the Tukui ConfigUI (type /tc into your chat)\nGoto: Addon Skins.\n\nNow you can enable or disable the needed skins. You can also activate the embed right for Skada or Recount." )
-	AsphyxiaUIMainFrameContentText4:SetText( "The default Blizzard-Frames are also skinned to match the rest of the AsphyxiaUI. If you don't like them you can disable it by follow these steps:\n\nOpen the Tukui ConfigUI (type /tc into your chat)\nGoto: General\n\nNow you can enable or disable the skinning for the Blizzard-Frames." )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry6_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry6_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry6_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry6_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry6_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry6_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry6_line6 )
 end
 
 local ahelp5content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Minimap, Chat" )
-	AsphyxiaUIMainFrameContentText1:SetText( "You can show or hide the minimap by clicking the left button at the minimap. There are also the buttons for the help frame and the Tukui version frame.\n\nThe minimap buttons are skinned too. So if you are using DBM, Skada or other addons with a seperate minimap button, this button will be skinned as well." )
-	AsphyxiaUIMainFrameContentText2:SetText( "You can change the height and/or width of the chatframes.\nFollow this steps to change the chat frames:\n\nOpen the Tukui ConfigUI (type /tc into your chat)\nGoto: Chat\n\nThere are two inputfields names chatheight and chatwidth. You can change the default values to whatever you want.\n\nAfter you are done click 'Apply Settings' on the bottom of the Tukui ConfigUI. After the reload the chatframes are changed." )
-	AsphyxiaUIMainFrameContentText3:SetText( "" )
-	AsphyxiaUIMainFrameContentText4:SetText( "" )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry5_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry5_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry5_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry5_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry5_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry5_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry5_line6 )
 end
 
 local ahelp4content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Panels, Nameplates" )
-	AsphyxiaUIMainFrameContentText1:SetText( "There is a seperate 'Control Panel' on the bottom of the screen.\n\nLeft button: after clicking this button the UI will be reloaded and the default AsphyxiaUI settings will be loaded.\n\nMiddle button: open the AsphyxiaUI Control Panel.\n\nRight button: reload the UI." )
-	AsphyxiaUIMainFrameContentText2:SetText( "" )
-	AsphyxiaUIMainFrameContentText3:SetText( "The AsphyxiaUI nameplates have several tweaks. You can enable or disable the debuff and cc tracking into the Tukui ConfigUI.\nFollow this steps to change the settings:" )
-	AsphyxiaUIMainFrameContentText4:SetText( "Open the Tukui ConfigUI (type /tc into your chat)\nGoto: Nameplates\nNow you can enable or disable the debuff and/or cc tracking onto the nameplates." )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry4_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry4_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry4_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry4_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry4_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry4_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry4_line6 )
 end
 
 local ahelp3content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Actionbars" )
-	AsphyxiaUIMainFrameContentText1:SetText( "There is a seperate config ui for the actionbars. Click onto 'Control Panel' and after that onto 'Actionbar Config'" )
-	AsphyxiaUIMainFrameContentText2:SetText( "Now you can change the actionbars to whatever you want." )
-	AsphyxiaUIMainFrameContentText3:SetText( "" )
-	AsphyxiaUIMainFrameContentText4:SetText( "" )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry3_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry3_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry3_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry3_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry3_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry3_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry3_line6 )
 end
 
 local ahelp2content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Unitframes" )
-	AsphyxiaUIMainFrameContentText1:SetText( "There are five different unitframe layouts. You can change them without editing the original LUA files." )
-	AsphyxiaUIMainFrameContentText2:SetText( "Follow this steps to change the unitframe layout:" )
-	AsphyxiaUIMainFrameContentText3:SetText( "Open the Tukui ConfigUI (type /tc into your chat)\nGoto: Asphyxia\nNow you can see a inputbox named 'Asphyxia Layout'. You can choose between asphyxia, asphyxia2, asphyxia3, asphyxia4 and smelly.\n\nAfter changing the layout click onto 'Apply Settings' on the bottom of the Tukui ConfigUI. After the reload the unitframes are changed." )
-	AsphyxiaUIMainFrameContentText4:SetText( "" )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry2_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry2_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry2_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry2_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry2_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry2_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry2_line6 )
 end
 
 local ahelp1content = function()
-	AsphyxiaUIMainFrameContentTitle:SetText( "Information" )
-	AsphyxiaUIMainFrameContentText1:SetText( "AsphyxiaUI is a heavily modified version of Tukui. AsphyxiaUI is a complete UI replacement.\nFor detailed information visit:\n\n|cff00FFFFhttp://www.tukui.org/forums/forum.php?id=165|r\nor\n|cff00FFFFhttps://github.com/Sinaris/AsphyxiaUI|r" )
-	AsphyxiaUIMainFrameContentText2:SetText( "You can use the following slash-commands:\n\n|cffEAC117/scp|r - Unlock sCombo bar to move.\n|cffEAC117/testui uf|r or |cffEAC117/testui unitframes|r -  Test mode for unitframes.\n|cffEAC117/testui a|r or |cffEAC117/testui arena|r - Test mode for arenaframes.\n|cffEAC117/testui b|r or |cffEAC117/testui boss|r - Test mode for bossframes.\n|cffEAC117/ali|r - Alignment grid." )
-	AsphyxiaUIMainFrameContentText3:SetText( "" )
-	AsphyxiaUIMainFrameContentText4:SetText( "" )
+	AsphyxiaUIMainFrameContentTitle:SetText( L.core_asphyxiauihelp_entry1_title )
+	AsphyxiaUIMainFrameContentText1:SetText( L.core_asphyxiauihelp_entry1_line1 )
+	AsphyxiaUIMainFrameContentText2:SetText( L.core_asphyxiauihelp_entry1_line2 )
+	AsphyxiaUIMainFrameContentText3:SetText( L.core_asphyxiauihelp_entry1_line3 )
+	AsphyxiaUIMainFrameContentText4:SetText( L.core_asphyxiauihelp_entry1_line4 )
+	AsphyxiaUIMainFrameContentText5:SetText( L.core_asphyxiauihelp_entry1_line5 )
+	AsphyxiaUIMainFrameContentText6:SetText( L.core_asphyxiauihelp_entry1_line6 )
 end
 
 ---------------------------------------------------------------------------------------------

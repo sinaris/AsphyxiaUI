@@ -532,7 +532,7 @@ local function Shared( self, unit )
 					TotemBar[i]:SetFrameLevel( self:GetFrameLevel() + 3 )
 
 					if( i == 1 ) then
-						TotemBar[i]:Point( "LEFT", health, "TOPLEFT", 20, 10 )
+						TotemBar[i]:Point( "LEFT", health, "TOPLEFT", 15, 10 )
 					else
 						TotemBar[i]:SetPoint( "TOPLEFT", TotemBar[i - 1], "TOPRIGHT", S.Scale( 7 ), 0 )
 					end

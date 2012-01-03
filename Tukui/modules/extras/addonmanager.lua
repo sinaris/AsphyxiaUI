@@ -102,6 +102,8 @@ local function UpdateAddons()
 		button:Size( 50, 16 )
 		button:SetTemplate( "Default" )
 
+		
+
 		if( enabled ) then
 			button:SetBackdropBorderColor( 0, 1, 0 )
 		else

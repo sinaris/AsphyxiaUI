@@ -277,6 +277,10 @@ S.RGBToHex = function( r, g, b )
 	return string.format( "|cff%02x%02x%02x", r * 255, g * 255, b * 255 )
 end
 
+if( C["datatext"].classcolor == true ) then
+	C["media"].datatextcolor1 = S.UnitColor.class[S.myclass]
+end
+
 S.ShortValue = function( v )
 	if( v >= 1e6 ) then
 		return ( "%.1fm" ):format( v / 1e6 ):gsub( "%.?0+([km])$", "%1" )
