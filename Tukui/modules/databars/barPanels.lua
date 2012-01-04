@@ -42,7 +42,7 @@ local function hideDatabars( self )
 	for i = 1, S.maxDatabars do
 		S.databars[i]:Hide()
 	end
-	self.text:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "open" )
+	self.text:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. OPENING )
 	self:ClearAllPoints()
 	self:SetPoint( S.databars[1]:GetPoint() )
 end
@@ -51,7 +51,7 @@ local function showDatabars( self )
 	for i = 1, S.maxDatabars do
 		S.databars[i]:Show()
 	end
-	self.text:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. "close" )
+	self.text:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. CLOSE )
 	self:ClearAllPoints()
 	if not C["databars"]["settings"].vertical then
 		self:SetPoint( "LEFT", S.databars[S.maxDatabars], "RIGHT", C["databars"]["settings"].spacing, 0 )
