@@ -83,6 +83,7 @@ C["unitframes"] = {
 	["classbar"] = true,
 	["swingtimer"] = false,
 	["vegeancebar"] = true,
+	["fader"] = true,
 }
 
 C["arena"] = {

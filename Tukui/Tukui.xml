@@ -24,6 +24,7 @@
 	<Script file="modules\unitframes\plugins\oUF_CombatFeedback\oUF_CombatFeedback.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_DebuffHighlight\oUF_DebuffHighlight.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_Experience\oUF_Experience.lua"/>
+	<Script file="modules\unitframes\plugins\oUF_Fader\oUF_Fader.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_MovableFrames\movable.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_Reputation\oUF_Reputation.lua"/>
 	<Script file="modules\unitframes\plugins\oUF_Smooth\oUF_Smooth.lua"/>
