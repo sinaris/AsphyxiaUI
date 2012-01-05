@@ -83,7 +83,6 @@
 	<Script file="modules\panels\asphyxia_panels.lua" />
 	<Script file="modules\panels\control_panel.lua" />
 
-	<Script file="modules\extras\raidbuffsreminder.lua" />
 	<Script file="modules\notifications\selfbuffs.lua" />
 
 	<Script file="modules\databars\barPanels.lua" /> 
@@ -167,7 +166,6 @@
 	<Script file="modules\misc\threatbar.lua"/>
 	<Script file="modules\blizzard\achievements.lua"/>
 	<Script file="modules\misc\dropdownlist.lua"/>
-	<Script file="core\move.lua"/>
 	<Script file="modules\misc\raidutilities.lua"/>
 
 	<Script file="modules\skins\blizzard\achievement.lua"/>
@@ -242,10 +240,14 @@
 	<Script file="modules\extras\aAsphyxiaUI.lua" />
 	<Script file="modules\extras\addonmanager.lua" />
 	<Script file="modules\extras\align.lua" />
-	<Script file="modules\extras\mail.lua" />
-	<Script file="modules\extras\bgannouncer.lua" />
 	<Script file="modules\extras\announce.lua" />
+	<Script file="modules\extras\aRaidcooldowns.lua" />
+	<Script file="modules\extras\bgannouncer.lua" />
+	<Script file="modules\extras\mail.lua" />
+	<Script file="modules\extras\raidbuffsreminder.lua" />
 	<Script file="modules\extras\sCombo.lua" />
+
+	<Script file="core\move.lua"/>
 
 	<Script file="developer\test.lua"/>	
 </Ui>
