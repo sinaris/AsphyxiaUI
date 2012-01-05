@@ -658,6 +658,49 @@ local function Shared( self, unit )
 			self.Castbar.Icon = castbar.icon
 		end
 
+		if( C["unitframes"].vegeancebar == true ) then
+			local classcolor = RAID_CLASS_COLORS[S.myclass]
+			local vegeancebar = CreateFrame( "StatusBar", self:GetName() .. "_Vengeance", self )
+			vegeancebar:SetFrameStrata( "TOOLTIP" )
+			vegeancebar:SetFrameLevel( 20 )
+			vegeancebar:Point( "TOPLEFT", TukuiInfoCenterLeft, 2, -2 )
+			vegeancebar:Point( "BOTTOMRIGHT", TukuiInfoCenterLeft, -2, 2 )
+			vegeancebar:SetStatusBarTexture( C["media"].normTex )
+			vegeancebar:GetStatusBarTexture():SetHorizTile( false )
+			vegeancebar:SetStatusBarColor( classcolor.r, classcolor.g, classcolor.b, 1 )
+			vegeancebar:SetTemplate( "Default", true )
+			vegeancebar:SetBackdropBorderColor( 0, 0, 0, 0 )
+			vegeancebar.Text = S.SetFontString( vegeancebar, C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+			vegeancebar.Text:Point( "CENTER", TukuiInfoCenterLeft, "CENTER", 0, 1 )
+
+			self.Vengeance = vegeancebar
+		end
+
+		if( C["unitframes"].swingtimer == true ) then
+			local swingtimer = CreateFrame( "StatusBar", self:GetName() .. "_Swing", self )
+			swingtimer:SetFrameLevel( 2 )
+
+			swingtimer:Point( "BOTTOMRIGHT", TukuiBar1, "TOPRIGHT", -2, 32 )
+			swingtimer:SetWidth( TukuiBar1:GetWidth() - 4 )
+			swingtimer:Height( 1 )
+			swingtimer:SetStatusBarTexture( C["media"].normTex )
+			swingtimer:GetStatusBarTexture():SetHorizTile( false )
+			swingtimer:SetStatusBarColor( C["media"].bordercolor )
+
+			swingtimer.bg = CreateFrame( "Frame", nil, swingtimer )
+			swingtimer.bg:Point( "TOPLEFT", -2, 2 )
+			swingtimer.bg:Point( "BOTTOMRIGHT", 2, -2 )
+			swingtimer.bg:SetFrameLevel( swingtimer:GetFrameLevel() - 1 )
+			swingtimer.bg:SetTemplate( "Default", true )
+			swingtimer.bg:CreateShadow( "Default" )
+
+			swingtimer.disableMelee = false
+			swingtimer.disableRanged = false
+			swingtimer.hideOoc = true
+
+			self.Swing = swingtimer
+		end
+
 		-----------------------
 		-- combat feedback
 		-----------------------
