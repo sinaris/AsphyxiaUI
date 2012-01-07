@@ -1312,12 +1312,30 @@ S.UpdateDruidManaText = function( self )
 	end
 end
 
-S.UpdateThreat = function( self, event, unit )
+--[[S.UpdateThreat = function( self, event, unit )
 	if( ( self.unit ~= unit ) or ( unit == "target" or unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" ) ) then return end
 	local threat = UnitThreatSituation( self.unit )
 	if( threat == 3 ) then
 		if( self.panel ) then
 			self.panel:SetBackdropBorderColor( 5, 0, 0, 1 )
+		else
+			self.Name:SetTextColor( 1, 0.1, 0.1 )
+		end
+	else
+		if( self.HealthBorder ) then
+			self.HealthBorder:SetBackdropBorderColor( unpack( C["media"].bordercolor ) )
+		else
+			self.Name:SetTextColor( 1, 1, 1 )
+		end
+	end 
+end]]--
+
+S.UpdateThreat = function( self, event, unit )
+	if( ( self.unit ~= unit ) or ( unit == "target" or unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" ) ) then return end
+	local threat = UnitThreatSituation( self.unit )
+	if( threat == 3 ) then
+		if( self.HealthBorder ) then
+			self.HealthBorder:SetBackdropBorderColor( 5 ,0, 0, 1 )
 		else
 			self.Name:SetTextColor( 1, 0.1, 0.1 )
 		end
