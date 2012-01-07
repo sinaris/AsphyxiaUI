@@ -479,6 +479,10 @@ function S.SkinTab( tab )
 	tab.backdrop:SetFrameLevel( tab:GetFrameLevel() - 1 )
 	tab.backdrop:Point( "TOPLEFT", 10, -3 )
 	tab.backdrop:Point( "BOTTOMRIGHT", -10, 3 )
+
+	local name = tab:GetName()
+	_G[name .. "Text"]:ClearAllPoints()
+	_G[name .. "Text"]:SetPoint( "TOP", name, 0, -11 )
 end
 
 function S.SkinNextPrevButton( btn, horizonal )

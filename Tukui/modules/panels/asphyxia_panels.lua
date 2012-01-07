@@ -384,3 +384,12 @@ mToggle:SetScript( "OnMouseDown", function()
 		mToggle.Text:SetText( "|cffFF0000-|r" )
     end
 end )
+
+mToggle:SetScript( "OnEnter", function()
+	if( InCombatLockdown() ) then return end
+	mToggle:FadeIn()
+end )
+
+mToggle:SetScript( "OnLeave", function()
+	mToggle:FadeOut()
+end )
