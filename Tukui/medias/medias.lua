@@ -31,6 +31,7 @@ C["media"] = {
 
 	["asphyxiafont"] = [=[Interface\Addons\Tukui\medias\fonts\asphyxia_font.ttf]=],
 	["pixelfont"] = [=[Interface\Addons\Tukui\medias\fonts\pixel_font.ttf]=],
+	["pixelfont_ru"] = [[Interface\AddOns\SinarisUI\media\fonts\pixelfont_ru.ttf]],
 	["chatfont"] = [[Interface\AddOns\Tukui\medias\fonts\chat_font.ttf]],
 
 	["normTex"] = [[Interface\AddOns\Tukui\medias\textures\normTex]],

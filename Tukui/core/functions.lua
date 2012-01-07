@@ -16,9 +16,17 @@ end
 
 S.SetUserFont = function()
 	if( C["asphyxia"].layout == "tukui" or C["asphyxia"].layout == "smelly" ) then
-		return C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE"
+		if( S.client == "ruRU" ) then
+			return C["media"].pixelfont_ru, C["datatext"].fontsize, "MONOCHROMEOUTLINE"
+		else
+			return C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE"
+		end
 	else
-		return C["media"].asphyxiafont, C["asphyxia"].uf_fontsize, "MONOCHROMEOUTLINE"
+		if( S.client == "ruRU" ) then
+			return C["media"].pixelfont_ru, C["datatext"].fontsize, "MONOCHROMEOUTLINE"
+		else
+			return C["media"].asphyxiafont, C["asphyxia"].uf_fontsize, "MONOCHROMEOUTLINE"
+		end
 	end
 end
 
