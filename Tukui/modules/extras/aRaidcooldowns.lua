@@ -120,12 +120,12 @@ local CreateBar = function()
 	bar.bg:SetTexture( C["media"].normTex )
 
 	bar.left = CreateFS( bar )
-	bar.left:Point( "LEFT", 2, 0 )
+	bar.left:Point( "LEFT", 2, 1 )
 	bar.left:SetJustifyH( "LEFT" )
 	bar.left:Size( 170, 15 )
 
 	bar.right = CreateFS( bar )
-	bar.right:Point( "RIGHT", 1, 0 )
+	bar.right:Point( "RIGHT", 1, 1 )
 	bar.right:SetJustifyH( "RIGHT" )
 
 	bar.icon = CreateFrame( "Button", nil, bar )

@@ -42,7 +42,7 @@ local function hideDatabars( self )
 	for i = 1, S.maxDatabars do
 		S.databars[i]:Hide()
 	end
-	self.text:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. OPEN )
+	self.text:SetText( S.RGBToHex( unpack( C["media"].datatextcolor2 ) ) .. OPENING )
 	self:ClearAllPoints()
 	self:SetPoint( S.databars[1]:GetPoint() )
 end

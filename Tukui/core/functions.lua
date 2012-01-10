@@ -280,7 +280,6 @@ end
 if( C["datatext"].classcolor == true ) then
 	C["media"].datatextcolor1 = S.UnitColor.class[S.myclass]
 end
---S.Panelcolor = S.RGBToHex( unpack( C["media"].datatextcolor1 ) )
 
 S.ShortValue = function( v )
 	if( v >= 1e6 ) then
@@ -480,6 +479,10 @@ function S.SkinTab( tab )
 	tab.backdrop:SetFrameLevel( tab:GetFrameLevel() - 1 )
 	tab.backdrop:Point( "TOPLEFT", 10, -3 )
 	tab.backdrop:Point( "BOTTOMRIGHT", -10, 3 )
+
+	local name = tab:GetName()
+	_G[name .. "Text"]:ClearAllPoints()
+	_G[name .. "Text"]:SetPoint( "TOP", name, 0, -11 )
 end
 
 function S.SkinNextPrevButton( btn, horizonal )
@@ -1457,52 +1460,55 @@ if( C["unitframes"].raidunitdebuffwatch == true ) then
 		end
 
 		S.debuffids = {
-		-- Other debuff
+			-------- Other debuff --------
 			SpellName( 67479 ), -- Impale
 
-		--CATA DEBUFFS
-		--Baradin Hold
+			-------- Baradin Hold --------
 			SpellName( 95173 ), -- Consuming Darkness
+			SpellName( 96913 ), -- Searing Shadows
+			SpellName( 104936 ), -- Skewer
+			SpellName( 105067 ), -- Seething Hate
 
-		--Blackwing Descent
-			--Magmaw
+			-------- Blackwing Descent --------
+			-- Magmaw
 			SpellName( 91911 ), -- Constricting Chains
 			SpellName( 94679 ), -- Parasitic Infection
 			SpellName( 94617 ), -- Mangle
+			SpellName( 78199 ), -- Sweltering Armor
 
-			--Omintron Defense System
-			SpellName( 79835 ), --Poison Soaked Shell
+			-- Omintron Defense System
 			SpellName( 91433 ), --Lightning Conductor
 			SpellName( 91521 ), --Incineration Security Measure
+			SpellName( 80094 ), --Fixate
 
-			--Maloriak
+			-- Maloriak
 			SpellName( 77699 ), -- Flash Freeze
 			SpellName( 77760 ), -- Biting Chill
 
-			--Atramedes
+			-- Atramedes
 			SpellName( 92423 ), -- Searing Flame
 			SpellName( 92485 ), -- Roaring Flame
 			SpellName( 92407 ), -- Sonic Breath
 
-			--Chimaeron
+			-- Chimaeron
 			SpellName( 82881 ), -- Break
 			SpellName( 89084 ), -- Low Health
 
-			--Nefarian
+			-- Nefarian
 
-			--Sinestra
-			SpellName( 92956 ), --Wrack
-
-		--The Bastion of Twilight
-			--Valiona & Theralion
+			-------- The Bastion of Twilight --------
+			-- Valiona & Theralion
 			SpellName( 92878 ), -- Blackout
 			SpellName( 86840 ), -- Devouring Flames
 			SpellName( 95639 ), -- Engulfing Magic
+			SpellName( 93051 ), -- Twilight Shift
+			SpellName( 92886 ), -- Twilight Zone
+			SpellName( 88518 ), -- Twilight Meteorite
 
-			--Halfus Wyrmbreaker
+			-- Halfus Wyrmbreaker
 			SpellName( 39171 ), -- Malevolent Strikes
 
-			--Twilight Ascendant Council
+			-- Twilight Ascendant Council
 			SpellName( 92511 ), -- Hydro Lance
 			SpellName( 82762 ), -- Waterlogged
 			SpellName( 92505 ), -- Frozen
@@ -1511,86 +1517,103 @@ if( C["unitframes"].raidunitdebuffwatch == true ) then
 			SpellName( 92075 ), -- Gravity Core
 			SpellName( 92488 ), -- Gravity Crush
 
-			--Cho'gall
+			-- Cho'gall
 			SpellName( 86028 ), -- Cho's Blast
 			SpellName( 86029 ), -- Gall's Blast
 
-		--Throne of the Four Winds
-			--Conclave of Wind
-				--Nezir <Lord of the North Wind>
-				SpellName( 93131 ), --Ice Patch
-				--Anshal <Lord of the West Wind>
-				SpellName( 86206 ), --Soothing Breeze
-				SpellName( 93122 ), --Toxic Spores
-				--Rohash <Lord of the East Wind>
-				SpellName( 93058 ), --Slicing Gale
-			--Al'Akir
+			-- Sinestra
+			SpellName( 92956 ), --Wrack
+
+			-------- Throne of the Four Winds --------
+			-- Conclave of Wind
+			-- Nezir <Lord of the North Wind>
+			SpellName( 93131 ), --Ice Patch
+			-- Anshal <Lord of the West Wind>
+			SpellName( 86206 ), --Soothing Breeze
+			SpellName( 93122 ), --Toxic Spores
+			-- Rohash <Lord of the East Wind>
+			SpellName( 93058 ), --Slicing Gale
+
+			-- Al'Akir
 			SpellName( 93260 ), -- Ice Storm
 			SpellName( 93295 ), -- Lightning Rod
 
-		-- Firelands, thanks Kaelhan :)
+			-------- Firelands --------
 			-- Beth'tilac
-				SpellName( 99506 ),	-- Widows Kiss
-				SpellName( 97202 ),	-- Fiery Web Spin
-				SpellName( 49026 ),	-- Fixate
-				SpellName( 97079 ),	-- Seeping Venom
-			-- Lord Rhyolith
-				-- none, hehe, fake boss
+			SpellName( 99506 ), -- Widows Kiss
+
 			-- Alysrazor
-				SpellName( 101296 ),	-- Fieroblast
-				SpellName( 100723 ),	-- Gushing Wound
-				SpellName( 99389 ),	-- Imprinted
-				SpellName( 101729 ),	-- Blazing Claw
+			SpellName( 101296 ), -- Fiero Blast
+			SpellName( 100723 ), -- Gushing Wound
+
 			-- Shannox
-				SpellName( 99837 ),	-- Crystal Prison
-				SpellName( 99937 ),	-- Jagged Tear
+			SpellName( 99837 ), -- Crystal Prison
+			SpellName( 99937 ), -- Jagged Tear
+
 			-- Baleroc
-				SpellName( 99256 ),	-- Torment
-				SpellName( 99252 ),	-- Blaze of Glory
-				SpellName( 99516 ),	-- Countdown
+			SpellName( 99403 ), -- Tormented
+			SpellName( 99256 ), -- Torment
+
+			-- Lord Rhyolith
+
 			-- Majordomo Staghelm
-				SpellName( 98450 ),	-- Searing Seeds
+			SpellName( 98450 ), -- Searing Seeds
+			SpellName( 98565 ), -- Burning Orb
+
 			-- Ragnaros
-				SpellName( 99399 ),	-- Burning Wound
-				SpellName( 100293 ),	-- Lava Wave
-				SpellName( 98313 ),	-- Magma Blast
-				SpellName( 100675 ),	-- Dreadflame
-				
-		-- Dragon Soul
+			SpellName( 99399 ), -- Burning Wound
+
+			-- Trash
+			SpellName( 99532 ), -- Melt Armor
+
+			-------- Dragon Soul --------
 			-- Morchok
-				SpellName( 103541 ),	-- Safe
-				SpellName( 103536 ),	-- Warning
-				SpellName( 103534 ),	-- Danger
-				SpellName( 108570 ),	-- Black Blood of the Earth
+			SpellName( 103541 ), -- Safe
+			SpellName( 103536 ), -- Warning
+			SpellName( 103534 ), -- Danger
+			SpellName( 108570 ), -- Black Blood of the Earth
 
 			-- Warlord Zon'ozz
-				SpellName( 103434 ),	-- Disrupting Shadows
+			SpellName( 103434 ), -- Disrupting Shadows
 
 			-- Yor'sahj the Unsleeping
-				SpellName( 105171 ),	-- Deep Corruption
+			SpellName( 105171 ), -- Deep Corruption
 
 			-- Hagara the Stormbinder
-				SpellName( 105465 ),	-- Lighting Storm
-				SpellName( 104451 ),	-- Ice Tomb
-				SpellName( 109325 ),	-- Frostflake
-				SpellName( 105289 ),	-- Shattered Ice
-				SpellName( 105285 ),	-- Target
+			SpellName( 105465 ), -- Lighting Storm
+			SpellName( 104451 ), -- Ice Tomb
+			SpellName( 109325 ), -- Frostflake
+			SpellName( 105289 ), -- Shattered Ice
+			SpellName( 105285 ), -- Target
 
 			-- Ultraxion
-				SpellName( 110079 ),	-- Fading Light
-				SpellName( 109075 ),	-- Fading Light
+			SpellName( 110079 ), -- Fading Light
+			SpellName( 109075 ), -- Fading Light
 
 			-- Warmaster Blackhorn
+			SpellName( 108043 ), -- Sunder Armor
+			SpellName( 107558 ), -- Degeneration
+			SpellName( 107567 ), -- Brutal Strike
+			SpellName( 108046 ), -- Shockwave
 
 			-- Spine of Deathwing
-				SpellName( 105479 ),	-- Searing Plasma
-				SpellName( 105490 ),	-- Fiery Grip
+			SpellName( 105479 ), -- Searing Plasma
+			SpellName( 105490 ), -- Fiery Grip
 
-			-- Madness of Deathwing	
+			-- Madness of Deathwing
+			SpellName( 105445 ), -- Blistering Heat
+			SpellName( 105841 ), -- Degenerative Bite
+			SpellName( 106385 ), -- Crush
+			SpellName( 106730 ), -- Tetanus
+			SpellName( 106444 ), -- Impale
+			SpellName( 106794 ), -- Shrapnel (target)
 		}
 
 		S.ReverseTimer = {
 			[92956] = true, -- Sinestra (Wrack)
+			[89435] = true, -- Sinestra (Wrack)
+			[92955] = true, -- Sinestra (Wrack)
+			[89421] = true, -- Sinestra (Wrack)
 		},
 		
 		ORD:RegisterDebuffs( S.debuffids )

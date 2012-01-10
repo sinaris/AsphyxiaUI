@@ -12,10 +12,11 @@ S.AllowFrameMoving = {
 	TukuiGMFrameAnchor,
 	TukuiVehicleAnchor,
 	TukuiExtraActionBarFrameHolder,
+	CDAnchor,
 }
 
 local function exec( self, enable )
-	if( self == TukuiGMFrameAnchor ) then
+	if( self == TukuiGMFrameAnchor or self == CDAnchor ) then
 		if( enable ) then
 			self:Show()
 		else
@@ -43,9 +44,9 @@ local function exec( self, enable )
 			self.text = S.SetFontString( self, C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
 			self.text:SetPoint( "CENTER" )
 			if( self == TukuiAurasPlayerBuffs ) then
-				self.text:SetText(L.move_buffs)
+				self.text:SetText( L.move_buffs )
 			elseif( self == TukuiAurasPlayerDebuffs ) then
-				self.text:SetText(L.move_debuffs)
+				self.text:SetText( L.move_debuffs )
 			end
 		else
 			local position = self:GetPoint()
