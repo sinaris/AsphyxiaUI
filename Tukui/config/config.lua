@@ -83,7 +83,6 @@ C["unitframes"] = {
 	["classbar"] = true,
 	["swingtimer"] = false,
 	["vegeancebar"] = true,
-	["fader"] = true,
 }
 
 C["arena"] = {
@@ -254,11 +253,4 @@ C["buffreminder"] = {
 	["enable"] = true,
 	["sound"] = true,
 	["raidbuffreminder"] = true,
-}
-
-C["raidcooldowns"] = {
-	["enable"] = true, -- enable raidcooldownmonitor
-	["raid"] = true, -- display bars in raid
-	["party"] = false, -- display bars in party
-	["arena"] = false, -- display bars in arena
 }

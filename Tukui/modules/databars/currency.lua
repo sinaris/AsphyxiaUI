@@ -13,7 +13,7 @@ local tokens = {
 	{ 392, 4000 },	-- Honor Points
 	{ 395, 4000 },	-- Justice Points
 	{ 396, 4000 },	-- Valor Points
-	{ 402, 250 },	-- Chef's Award 
+	{ 402, 10 },	-- Chef's Award 
 	{ 416, 300 },	-- Mark of the World Tree
 }
 
@@ -86,7 +86,7 @@ local toggle = CreateFrame( "Frame", "CurrencyToggle", UIParent )
 toggle:CreatePanel( "Default", 30, 15, "TOPRIGHT", TukuiChatBackgroundRight, "TOPRIGHT", -2, -84 )
 toggle:EnableMouse( true )
 toggle:SetFrameStrata( "MEDIUM" )
-toggle:SetFrameLevel( 10 )
+toggle:SetFrameLevel( 2 )
 toggle:CreateOverlay( toggle )
 toggle:CreateShadow( "Default" )
 toggle:SetAlpha( 0 )

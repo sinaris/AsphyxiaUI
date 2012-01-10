@@ -1,6 +1,7 @@
-local S, C, L = unpack( select( 2, ... ) )
+local T, C, L = unpack(select(2, ...))
 
-if( S.client == "zhCN" ) then
+if T.client == "zhCN" then
+	-- localization for zhCN  by 风吹那啥凉（Popptise @Tukui forums)	
 	L.chat_BATTLEGROUND_GET = "战场"
 	L.chat_BATTLEGROUND_LEADER_GET = "战场领袖"
 	L.chat_BN_WHISPER_GET = "密语"
@@ -18,7 +19,8 @@ if( S.client == "zhCN" ) then
 	L.chat_FLAG_GM = "[GM]"
 	L.chat_ERR_FRIEND_ONLINE_SS = "|cff05e9FF上线了|r"  
 	L.chat_ERR_FRIEND_OFFLINE_S = "|cffff0000下线了|r"
-
+	
+	-- 请不要缩写下列频道名称 这是用来帮助设置归类频道的
 	L.chat_general = "综合"
 	L.chat_trade = "交易"
 	L.chat_defense = "本地防务"
@@ -93,17 +95,17 @@ if( S.client == "zhCN" ) then
 	L.datatext_control = "控制方："
 
 	L.Slots = {
-		[1] = { 1, "头部", 1000 },
-		[2] = { 3, "肩部", 1000 },
-		[3] = { 5, "胸部", 1000 },
-		[4] = { 6, "腰部", 1000 },
-		[5] = { 9, "手腕", 1000 },
-		[6] = { 10, "手", 1000 },
-		[7] = { 7, "腿部", 1000 },
-		[8] = { 8, "脚", 1000 },
-		[9] = { 16, "主手", 1000 },
-		[10] = { 17, "副手", 1000 },
-		[11] = { 18, "远程", 1000 }
+		[1] = {1, "头部", 1000},
+		[2] = {3, "肩部", 1000},
+		[3] = {5, "胸部", 1000},
+		[4] = {6, "腰部", 1000},
+		[5] = {9, "手腕", 1000},
+		[6] = {10, "手", 1000},
+		[7] = {7, "腿部", 1000},
+		[8] = {8, "脚", 1000},
+		[9] = {16, "主手", 1000},
+		[10] = {17, "副手", 1000},
+		[11] = {18, "远程", 1000}
 	}
 
 	L.popup_disableui = "Tukui不支持当前分辨率，想要禁用Tukui吗？（如果你想尝试其他分辨率就点击取消）"
@@ -165,7 +167,7 @@ if( S.client == "zhCN" ) then
 	L.bags_bids = "使用背包： "
 	L.bags_stackend = "重新堆叠完成。"
 	L.bags_rightclick_search = "右击开始查找。"
-
+	
 	L.loot_fish = "Fishy loot" -- not sure for this now
 	L.loot_empty = "Empty slot" -- not sure for this now
 
@@ -197,104 +199,11 @@ if( S.client == "zhCN" ) then
 	L.core_uihelp11 = "|cffFF0000/ainv|r - 通过M语关键词启用自动邀请。你可以通过在聊天框输入“/ainv 你的关键词”来设置你自己的关键词。"
 	L.core_uihelp100 = "（向下滚动以获取更多的指令。）"
 
-	L.core_asphyxiauihelp_header = "|cff00AAFFAsphyxiaUI " .. S.xversion .. "|r - Help" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button1 = "Information" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button2 = "Unitframes" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button3 = "Actionbars" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button4 = "Panels, Nameplates" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button5 = "Minimap, Chat" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button6 = "Extra AddOns, Skins" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button7 = "Reported Issues" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button8 = "Credits" -- TRANS NEEDED
-	L.core_asphyxiauihelp_button9 = "Donation" -- TRANS NEEDED
-
-	L.core_asphyxiauihelp_entry0_title = ""
-	L.core_asphyxiauihelp_entry0_line1 = "Please select a category" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry0_line2 = ""
-	L.core_asphyxiauihelp_entry0_line3 = ""
-	L.core_asphyxiauihelp_entry0_line4 = ""
-	L.core_asphyxiauihelp_entry0_line5 = ""
-	L.core_asphyxiauihelp_entry0_line6 = ""
-
-	L.core_asphyxiauihelp_entry1_title = "Information" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry1_line1 = "AsphyxiaUI is a heavily modified version of Tukui. AsphyxiaUI is a complete UI replacement." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry1_line2 = "For detailed information visit:" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry1_line3 = "|cff00FFFFhttp://www.tukui.org/forums/forum.php?id=165|r\nor\n|cff00FFFFhttps://github.com/Sinaris/AsphyxiaUI|r" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry1_line4 = ""
-	L.core_asphyxiauihelp_entry1_line5 = "You can use the following slash-commands:" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry1_line6 = "|cffEAC117/scp|r - Unlock sCombo bar to move.\n|cffEAC117/testui uf|r or |cffEAC117/testui unitframes|r -  Test mode for unitframes.\n|cffEAC117/testui a|r or |cffEAC117/testui arena|r - Test mode for arenaframes.\n|cffEAC117/testui b|r or |cffEAC117/testui boss|r - Test mode for bossframes.\n|cffEAC117/ali|r - Alignment grid." -- TRANS NEEDED
-
-	L.core_asphyxiauihelp_entry2_title = "Unitframes" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry2_line1 = "There are five different unitframe layouts. You can change them without editing the original LUA files." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry2_line2 = "Follow this steps to change the unitframe layout:" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry2_line3 = "Open the Tukui ConfigUI (type /tc into your chat)." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry2_line4 = "Goto: Asphyxia. Now you can see a inputbox named 'AsphyxiaUI Layout'." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry2_line5 = "You can choose between asphyxia, asphyxia2, asphyxia3, asphyxia4 and smelly." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry2_line6 = "After changing the layout click onto 'Apply Settings' on the bottom of the Tukui ConfigUI. After the reload the unitframes are changed." -- TRANS NEEDED
-
-	L.core_asphyxiauihelp_entry3_title = "Actionbars" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry3_line1 = "There is a seperate config ui for the actionbars. Click onto 'Control Panel' at the bottom of the actionbars. Now click onto 'Actionbar Config'" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry3_line2 = "Now you can change the actionbars to whatever you want." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry3_line3 = ""
-	L.core_asphyxiauihelp_entry3_line4 = ""
-	L.core_asphyxiauihelp_entry3_line5 = ""
-	L.core_asphyxiauihelp_entry3_line6 = ""
-
-	L.core_asphyxiauihelp_entry4_title = "Panels, Nameplates" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry4_line1 = "There is a seperate 'Control Panel' on the bottom of the screen." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry4_line2 = "Left button: after clicking this button the UI will be reloaded and the default AsphyxiaUI settings will be loaded." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry4_line3 = "Middle button: open the AsphyxiaUI Control Panel." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry4_line4 = "Right button: reload the UI." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry4_line5 = "The AsphyxiaUI nameplates have several tweaks. You can enable or disable the debuff and cc tracking into the Tukui ConfigUI.\nFollow this steps to change the settings:" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry4_line6 = "Open the Tukui ConfigUI (type /tc into your chat)\nGoto: Nameplates\nNow you can enable or disable the debuff and/or cc tracking onto the nameplates." -- TRANS NEEDED
-
-	L.core_asphyxiauihelp_entry5_title = "Minimap, Chat"
-	L.core_asphyxiauihelp_entry5_line1 = "You can show or hide the minimap by clicking the left button at the minimap. There are also the buttons for the help frame and the Tukui version frame." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry5_line2 = "The minimap buttons are skinned too. So if you are using DBM, Skada or other addons with a seperate minimap button, this button will be skinned as well." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry5_line3 = "You can change the height and/or width of the chatframes." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry5_line4 = "Follow this steps to change the chat frames:" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry5_line5 = "Open the Tukui ConfigUI (type /tc into your chat) and goto: Chat" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry5_line6 = "There are two inputfields names chatheight and chatwidth. You can change the default values to whatever you want.\n\nAfter you are done click 'Apply Settings' on the bottom of the Tukui ConfigUI. After the reload the chatframes are changed." -- TRANS NEEDED
-
-	L.core_asphyxiauihelp_entry6_title = "Extra AddOns, Skins" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry6_line1 = "There are some extra addons included into AsphyxiaUI. You will find some credits and other informations about this under the 'Credits' section." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry6_line2 = "AsphyxiaUI has some nice and cool looking skins for the following AddOns:\nBalancePowerTracker, BigWigs, DeadlyBossMods, DeuxVox, Omen, Recount, Skada and TinyDPS." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry6_line3 = "You can change these settings by follow these steps:" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry6_line4 = "Open the Tukui ConfigUI (type /tc into your chat) and goto: Addon Skins.\n\nNow you can enable or disable the needed skins. You can also activate the embed right for Skada or Recount." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry6_line5 = "The default Blizzard-Frames are also skinned to match the rest of the AsphyxiaUI. If you don't like them you can disable it by follow these steps:" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry6_line6 = "Open the Tukui ConfigUI (type /tc into your chat) and goto: General\n\nNow you can enable or disable the skinning for the Blizzard-Frames." -- TRANS NEEDED
-
-	L.core_asphyxiauihelp_entry7_title = "Reported Issues" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry7_line1 = "I worked hard, very hard. So, i know that there are some issues into the AsphyxiaUI." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry7_line2 = "If you founds something the looks ugly or if you think that can be a bug, errors or whatever, let me know about them." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry7_line3 = ""
-	L.core_asphyxiauihelp_entry7_line4 = "You can post your erros here (please read the guidline to report bugs and erros):" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry7_line5 = "|cff00FFFFhttp://www.tukui.org/forums/topic.php?id=18608|r" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry7_line6 = ""
-
-	L.core_asphyxiauihelp_entry8_title = "Credits" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry8_line1 = "First: Asphyxia, the creator of this UI. thank you for this awesome job. I hope the 'new' AsphyxiaUI is that what you want." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry8_line2 = "Some other credits goto: Caith, Caellian, Shestak, Haste, Tekkub, Alza, Roth, P3lim, Tulla, Hungtar, hankthetank, Ishtara, Haleth and others..." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry8_line3 = ""
-	L.core_asphyxiauihelp_entry8_line4 = "Special thanks to: Asi, my forum bitch! xD" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry8_line5 = ""
-	L.core_asphyxiauihelp_entry8_line6 = "If i missed someone, let me know it and i will add them onto the list." -- TRANS NEEDED
-
-	L.core_asphyxiauihelp_entry9_title = "Donation" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry9_line1 = "It's not easy to create a new UI, giving support for all other users and pushing updates as much as i can." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry9_line2 = "Feel free to give some donations for this UI." -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry9_line3 = "You can do this here:\n|cff00FFFFhttp://www.tukui.org/forums/topic.php?id=18539|r" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry9_line4 = ""
-	L.core_asphyxiauihelp_entry9_line5 = "I have to say thank you to the following donators:" -- TRANS NEEDED
-	L.core_asphyxiauihelp_entry9_line6 = "|cff00AAFFMastamage, Calaglin|r" -- TRANS NEEDED
-
-	L.core_asphyxiauihelp_revision = "rev.: 1.0" -- TRANS NEEDED
-
 	L.core_controlpanel_controlpanel_header = "Control Panel Menu" -- TRANS NEEDED
 	L.core_controlpanel_controlpanel_abconfig = "Actionbar Config" -- TRANS NEEDED
 	L.core_controlpanel_controlpanel_configui = "Config UI" -- TRANS NEEDED
 	L.core_controlpanel_controlpanel_moveui = "Move UI" -- TRANS NEEDED
-
+	
 	L.core_controlpanel_abconfigmenu_header = "Actionbar Config Menu" -- TRANS NEEDED
 	L.core_controlpanel_abconfigmenu_locked = "Actionbars |cffe45050Locked|r" -- TRANS NEEDED
 	L.core_controlpanel_abconfigmenu_unlocked = "Actionbars |cff50e468Unlocked|r" -- TRANS NEEDED
@@ -335,6 +244,11 @@ if( S.client == "zhCN" ) then
 	L.move_roll = "移动拾取R点框体"
 	L.move_vehicle = "移动载具界面"
 
+	-------------------------------------------------
+	-- INSTALLATION
+	-------------------------------------------------
+
+	-- headers
 	L.install_header_1 = "欢迎"
 	L.install_header_2 = "1. 要点"
 	L.install_header_3 = "2. 单位框架"
@@ -347,62 +261,74 @@ if( S.client == "zhCN" ) then
 	L.install_header_10= "3. 框架"
 	L.install_header_11= "4. 成功！"
 
+	-- install
 	L.install_init_line_1 = "感谢您选择Tukui。"
 	L.install_init_line_2 = "几个小步骤将引导你安装Tukui. 在每一步中， 你可以选择应用或者跳过当前的设定。"
 	L.install_init_line_3 = "你也可以选择查看我们提供给您的关于Tukui一些特性的小提示。"
 	L.install_init_line_4 = "按下教程按键开始查看教程，或者点击安装跳过这一步。"
 
+	-- tutorial 1
 	L.tutorial_step_1_line_1 = "这个快速的小教程将给您展示一些Tukui的特性。"
 	L.tutorial_step_1_line_2 = "首先，将告知你一些使用Tukui前该知道的要点。"
 	L.tutorial_step_1_line_3 = "安装程序是按照每个角色来设定的。当然一些设定将在整个帐号下适用，您必须要为每一个使用Tukui的角色运行一遍安装程序。程序将在您每个角色第一次运行Tukui时自动显示。 当然, 高阶用户可以在 /Tukui/config/config.lua 中发现这些选项， 新手在游戏中输入/tukui 也可以找到。"
 	L.tutorial_step_1_line_4 = "高阶用户是指相比于普通的用户他们有能力使用一些新的特新(比如编辑LUA脚本)。新手是指没有编程能力的用户。那么我们建议他们使用游戏内设置面板来设定Tukui至他们想要的样式。"
 
+	-- tutorial 2
 	L.tutorial_step_2_line_1 = "Tukui包含了一个由Haste编写的oUF的内建版本. 由它来构建整个屏幕上的各种单位框体，玩家的BUFF/DEBUFF和职业特定的BUFF/DEBUFF."
 	L.tutorial_step_2_line_2 = "你可以在Wowinterface上搜索oUF来获取更多关于这个工具的信息。"
 	L.tutorial_step_2_line_3 = "如果你是一个治疗者或者团队领袖，那么你可能需要启用治疗框体。 它显示了更多的raid信息(/heal)。DPS和坦克需要一个相对简单的团队框架(/dps)。如果你不想使用它们中的任何一个，你可以在人物选择界面中的插件列表里禁用它们。"
 	L.tutorial_step_2_line_4 = "你只需要输入/moveui,，既可以简单的移动单位框架。"
 
+	-- tutorial 3
 	L.tutorial_step_3_line_1 = "Tukui是一个重新设计过的暴雪用户界面。不多不少，大概所有的原始特性你都可以在Tukui中体验到。 有些仅有的原始界面不能实现的功能在屏幕中是看不到的， 比如说当你访问商人的时候自动售卖灰色的物品，又或者自动整理背包内的物品。"
 	L.tutorial_step_3_line_2 = "因为并不是所有人都喜欢诸如：伤害统计, 首领模块, 仇恨统计, 等等这些模块, 但我们认为这是非常好的事. Tukui是为不同职业，不同口味，不同爱好，不同天赋等等最大化的玩家群体所编写的。 这就是为什么Tukui是当前最火的UI。 它满足了每一个人的游戏体验并且完全可供编辑。 它也被设计于为那些想要打造自己特性的UI的初学者们提供了一个很好的开端而无需专注于插件本身的构造。 从2009年开始，许多用户使用Tukui作为基本架构来制作他们自己的插件。 你可以到我们的网站上看看那些Tukui改版！"
 	L.tutorial_step_3_line_3 = "用户们可以到我们官方网站的Tukui配套插件区或者访问 www.wowinterface.com 来获取安装更多有额外特性的插件。"
 	L.tutorial_step_3_line_4 = ""
 
+	-- tutorial 4
 	L.tutorial_step_4_line_1 = "想要设置动作条的数目, 移动鼠标至左/右动作条的底部背景框架。可以使用相同的方法设定右边的动作条，点击顶部或底部。 想要从聊天框内复制文字， 鼠标点击在聊天框右上角出现的小按钮即可。"
 	L.tutorial_step_4_line_2 = "小地图的边框可以改变颜色。绿色的时候说明你有未读邮件，红色表明你有新的行事历邀请 ，橙色表明你两者都有。"
 	L.tutorial_step_4_line_3 = "你可以点击80%的信息栏来打开更多的BLZ面板。 好友和公会信息也具有右键特性。"
 	L.tutorial_step_4_line_4 = "这里有一些下拉菜单可以使用。 右键[X] (关闭) 背包按钮 将会显示下拉菜单比如：显示背包，整理背包，显示钥匙扣等等。 鼠标中间点击小地图将会显示宏命令按钮。"
 
+	-- tutorial 5
 	L.tutorial_step_5_line_1 = "最后，Tukui有一些实用的命令，下面是列表"
 	L.tutorial_step_5_line_2 = "/moveui 允许你移动屏幕上的大多数框体至任何地方。 /enable 和 /disable 被用于快速开启或关闭大多数插件。 /rl 重载插件。 /heal 启用治疗团队框架。/dps 启用坦克/输出团队框架。"
 	L.tutorial_step_5_line_3 = "/tt 让你M语你的目标 /rc 立即进行团队就绪检查 /rd 解散团队或小队 /bags 通过命令行来显示一些可用信息 /ainv 通过M语你来启用自动邀请 (/ainv off) 关闭自动邀请。"
 	L.tutorial_step_5_line_4 = "/gm 打开帮助面板 /install, /resetui or /tutorial 载入安装程序 /frame 在聊天框里输入当前鼠标下框体的一些额外的信息。"
 
+	-- tutorial 6
 	L.tutorial_step_6_line_1 = "教程结束了。你可以在任何时候输入/tutorial来重新参看教程。"
 	L.tutorial_step_6_line_2 = "我建议你仔细的看一下config/config.lua 或者输入 /Tukui 来设置你所需要的属性。"
 	L.tutorial_step_6_line_3 = "你可以继续安装，如果安装已经完成你可以重置插件。"
 	L.tutorial_step_6_line_4 = ""
 
+	-- install step 1
 	L.install_step_1_line_1 = "这些步骤将会为Tukui设置正确的环境变量。"
 	L.install_step_1_line_2 = "第一步将会应用一些比较重要的设置。"
 	L.install_step_1_line_3 = "这一步 |cffff0000推荐|r 所有的用户应用, 除非你只想应用一些特殊的设定。"
 	L.install_step_1_line_4 = "点击继续来应用这些设定，或者如果你想要跳过这些步骤点击跳过。"
 
+	-- install step 2
 	L.install_step_2_line_0 = "发现另外的聊天插件。我们将略过这一步。请按跳过继续安装。"
 	L.install_step_2_line_1 = "第二步应用了正确的聊天设定。"
 	L.install_step_2_line_2 = "如果你是一个新用户，那么非常建议你应用这一步。 如果您已经在使用，那么可以跳过这一步。"
 	L.install_step_2_line_3 = "由于应用这些设定，聊天字体过大是正常的。 当安装完成之后它会恢复正常。"
 	L.install_step_2_line_4 = "点击继续来继续安装，或者点击跳过，如果你想跳过这一步骤。"
 
+	-- install step 3
 	L.install_step_3_line_1 = "第三步且是最后一步将会设定原始框体的位置。"
 	L.install_step_3_line_2 = "非常 |cffff0000推荐|r 新手应用这一步。"
 	L.install_step_3_line_3 = ""
 	L.install_step_3_line_4 = "点击继续来继续安装，或者点击跳过，如果你想跳过这一步骤。"
 
+	-- install step 4
 	L.install_step_4_line_1 = "安装完成~"
 	L.install_step_4_line_2 = "请点击”完成“按钮重载插件。"
 	L.install_step_4_line_3 = ""
 	L.install_step_4_line_4 = "享受Tukui吧! 访问我们： www.tukui.org!"
 
+	-- buttons
 	L.install_button_tutorial = "教程"
 	L.install_button_install = "安装"
 	L.install_button_next = "下一步"

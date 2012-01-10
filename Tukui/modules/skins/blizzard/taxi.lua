@@ -1,11 +1,11 @@
-local S, C, L = unpack( select( 2, ... ) )
+local T, C, L = unpack(select(2, ...))
 
 local function LoadSkin()
 	TaxiFrame:StripTextures()
-	TaxiFrame:CreateBackdrop( "Transparent" )
-	TaxiRouteMap:CreateBackdrop( "Transparent" )
+	TaxiFrame:CreateBackdrop("Transparent")
+	TaxiRouteMap:CreateBackdrop("Transparent")
 	TaxiRouteMap.backdrop:SetAllPoints()
-	S.SkinCloseButton( TaxiFrameCloseButton )
+	T.SkinCloseButton(TaxiFrameCloseButton)
 end
 
-tinsert( S.SkinFuncs["Tukui"], LoadSkin )
+tinsert(T.SkinFuncs["Tukui"], LoadSkin)

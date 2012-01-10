@@ -38,7 +38,7 @@ for i = 1, GetNumFactions() do
 
 		frame.Text = frame.Status:CreateFontString( nil, "OVERLAY" )
 		frame.Text:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
-		frame.Text:Point( "LEFT", frame, "LEFT", 6, 1 )
+		frame.Text:Point( "LEFT", frame, "LEFT", 6, 2 )
 		frame.Text:SetShadowColor( 0, 0, 0 )
 		frame.Text:SetShadowOffset( 1.25, -1.25 )
 		frame.Text:SetText( format( "%s / %s", min, max ) )
@@ -46,7 +46,7 @@ for i = 1, GetNumFactions() do
 
 		frame.Name = frame.Status:CreateFontString( nil, "OVERLAY" )
 		frame.Name:SetFont( C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
-		frame.Name:Point( "LEFT", frame, "LEFT", 6, 1 )
+		frame.Name:Point( "LEFT", frame, "LEFT", 6, 2 )
 		frame.Name:SetShadowColor( 0, 0, 0 )
 		frame.Name:SetShadowOffset( 1.25, -1.25 )
 		frame.Name:SetText( name )

@@ -280,7 +280,6 @@ local icb = CreateFrame( "Frame", "InfoCenterButton", TukuiChatBackgroundRight )
 icb:CreatePanel( nil, 30, 15, "TOPRIGHT", TukuiChatBackgroundRight, "TOPRIGHT", -2, -68 )
 icb:SetAlpha( 0 )
 icb:SetFrameStrata( "MEDIUM" )
-icb:SetFrameLevel( 10 )
 icb:CreateOverlay( icb )
 icb:EnableMouse( true )
 icb.f = icb:CreateFontString( nil, overlay )
@@ -383,13 +382,4 @@ mToggle:SetScript( "OnMouseDown", function()
 		TukuiAurasPlayerDebuffs:Point( "TOPRIGHT", -204, -150 )
 		mToggle.Text:SetText( "|cffFF0000-|r" )
     end
-end )
-
-mToggle:SetScript( "OnEnter", function()
-	if( InCombatLockdown() ) then return end
-	mToggle:FadeIn()
-end )
-
-mToggle:SetScript( "OnLeave", function()
-	mToggle:FadeOut()
 end )
