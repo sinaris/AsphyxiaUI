@@ -36,6 +36,10 @@ local function Update( self )
 		leveldifference = 0
 	end
 
+	if( S.myrace == "NightElf" ) then
+		basemisschance = basemisschance + 2
+	end
+
 	if( leveldifference >= 0 ) then
 		dodge = ( GetDodgeChance() - leveldifference * .2 )
 		parry = ( GetParryChance() - leveldifference * .2 )

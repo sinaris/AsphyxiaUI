@@ -1568,7 +1568,7 @@ if( C["unitframes"].raidunitdebuffwatch == true ) then
 
 			-------- Dragon Soul --------
 			-- Morchok
-			SpellName( 103541 ), -- Safe
+			SpellName( 103687 ), -- Crush Armor
 			SpellName( 103536 ), -- Warning
 			SpellName( 103534 ), -- Danger
 			SpellName( 108570 ), -- Black Blood of the Earth
@@ -1577,18 +1577,18 @@ if( C["unitframes"].raidunitdebuffwatch == true ) then
 			SpellName( 103434 ), -- Disrupting Shadows
 
 			-- Yor'sahj the Unsleeping
-			SpellName( 105171 ), -- Deep Corruption
+			SpellName( 103628 ), -- Deep Corruption
 
 			-- Hagara the Stormbinder
-			SpellName( 105465 ), -- Lighting Storm
 			SpellName( 104451 ), -- Ice Tomb
+			SpellName( 105259 ), -- Watery Entrenchment
 			SpellName( 109325 ), -- Frostflake
 			SpellName( 105289 ), -- Shattered Ice
 			SpellName( 105285 ), -- Target
+			SpellName( 107061 ), -- Ice Lance
 
 			-- Ultraxion
-			SpellName( 110079 ), -- Fading Light
-			SpellName( 109075 ), -- Fading Light
+			SpellName( 105925 ), -- Fading Light
 
 			-- Warmaster Blackhorn
 			SpellName( 108043 ), -- Sunder Armor
@@ -1597,16 +1597,15 @@ if( C["unitframes"].raidunitdebuffwatch == true ) then
 			SpellName( 108046 ), -- Shockwave
 
 			-- Spine of Deathwing
+			SpellName( 105563 ), -- Grasping Tendrils
 			SpellName( 105479 ), -- Searing Plasma
 			SpellName( 105490 ), -- Fiery Grip
 
 			-- Madness of Deathwing
-			SpellName( 105445 ), -- Blistering Heat
-			SpellName( 105841 ), -- Degenerative Bite
-			SpellName( 106385 ), -- Crush
-			SpellName( 106730 ), -- Tetanus
-			SpellName( 106444 ), -- Impale
-			SpellName( 106794 ), -- Shrapnel (target)
+			SpellName( 105841 ), -- Degenerative bite
+			SpellName( 105445 ), -- Blistering heat
+			SpellName( 109603 ), -- Tetanus
+			SpellName( 110141 ), -- Shrapnel
 		}
 
 		S.ReverseTimer = {
