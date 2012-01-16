@@ -1,6 +1,6 @@
 local S, C, L = unpack( select( 2, ... ) )
 
-if not C["actionbar"].enable == true then return end
+if( C["actionbar"].enable ~= true ) then return end
 
 local _G = _G
 local media = C["media"]
@@ -23,9 +23,17 @@ function S.StyleActionBarButton( self )
 	local Btname = _G[name .. "Name"]
 	local normal  = _G[name .. "NormalTexture"]
 	local BtnBG = _G[name .. "FloatingBG"]
+	local GradientColor = function( self, r, g, b )
+		self:SetGradient( "VERTICAL", r, g, b, r * .3, g * .3, b * .3 )
+	end
 
 	Flash:SetTexture( "" )
 	Button:SetNormalTexture( "" )
+
+	if( Icon ) then
+		Icon.SetVertexColor = GradientColor
+		Icon:SetVertexColor( 1, 1, 1 )
+	end
 
 	if( Border ) then
 		Border:Hide()
