@@ -18,7 +18,7 @@ do
 	if( S.lowversion )then
 		wrap = 8
 	else
-		wrap = 14
+		wrap = 15
 	end
 
 	if( frame == "TukuiAurasPlayerConsolidate" ) then
@@ -32,7 +32,7 @@ do
 		header:SetAttribute( "minHeight", 30 )
 		header:SetAttribute( "wrapAfter", wrap )
 		header:SetAttribute( "wrapYOffset", -67.5 )
-		header:SetAttribute( "xOffset", -35 )
+		header:SetAttribute( "xOffset", -33 )
 	end
 	header:SetAttribute( "minWidth", wrap * 35 )
 	header:SetAttribute( "template", "TukuiAurasAuraTemplate" )
