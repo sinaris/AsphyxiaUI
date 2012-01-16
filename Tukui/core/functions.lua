@@ -1041,7 +1041,7 @@ end
 S.PostCreateAura = function( self, button )
 	button:SetTemplate( "Default" )
 
-	button.remaining = S.SetFontString( button, C["media"].font, C["unitframes"].auratextscale, "THINOUTLINE" )
+	button.remaining = S.SetFontString( button, C["media"].pixelfont, 12, "MONOCHROMEOUTLINE" )
 	button.remaining:Point( "CENTER", 1, 0 )
 
 	button.cd.noOCC = true
@@ -1055,7 +1055,7 @@ S.PostCreateAura = function( self, button )
 
 	button.count:Point( "BOTTOMRIGHT", 3, 3 )
 	button.count:SetJustifyH( "RIGHT" )
-	button.count:SetFont( C["media"].font, 9, "THICKOUTLINE" )
+	button.count:SetFont( C["media"].pixelfont, 10, "MONOCHROMEOUTLINE" )
 	button.count:SetTextColor( 0.84, 0.75, 0.65 )
 
 	button.overlayFrame = CreateFrame( "frame", nil, button, nil )
@@ -1223,7 +1223,6 @@ S.DruidBarDisplay = function( self, login )
 			txt:Show()
 			flash:Hide()
 		end
-		--shadow:Point( "TOPLEFT", -4, 12 )
 		bg:SetAlpha( 1 )
 		if( S.lowversion ) then
 			if( buffs ) then buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", 0, 34 ) end
@@ -1233,7 +1232,6 @@ S.DruidBarDisplay = function( self, login )
 	else
 		txt:Hide()
 		flash:Show()
-		--shadow:Point( "TOPLEFT", -4, 4 )
 		bg:SetAlpha( 0 )
 		if( S.lowversion ) then
 			if( buffs ) then buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", 0, 26 ) end
@@ -1449,11 +1447,11 @@ if( C["unitframes"].raidunitdebuffwatch == true ) then
 		local ORD = ns.oUF_RaidDebuffs or oUF_RaidDebuffs
 
 		if not ORD then return end
-		
+
 		ORD.ShowDispelableDebuff = true
 		ORD.FilterDispellableDebuff = true
 		ORD.MatchBySpellName = true
-		
+
 		local function SpellName( id )
 			local name = select( 1, GetSpellInfo( id ) )
 			return name	
@@ -1614,7 +1612,7 @@ if( C["unitframes"].raidunitdebuffwatch == true ) then
 			[92955] = true, -- Sinestra (Wrack)
 			[89421] = true, -- Sinestra (Wrack)
 		},
-		
+
 		ORD:RegisterDebuffs( S.debuffids )
 	end
 end
