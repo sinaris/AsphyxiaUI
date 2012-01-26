@@ -2193,9 +2193,9 @@ local function Shared( self, unit )
 		health:SetPoint( "TOPRIGHT" )
 		health:SetStatusBarTexture( normTex )
 
-		local healthBG = health:CreateTexture( nil, "BORDER" )
-		healthBG:SetAllPoints()
-		healthBG:SetTexture( 0, 0, 0 )
+		local healthBackground = health:CreateTexture( nil, "BORDER" )
+		healthBackground:SetAllPoints()
+		healthBackground:SetTexture( 0, 0, 0 )
 
 		local healthBorder = CreateFrame( "Frame", nil, health )
 		healthBorder:SetPoint( "TOPLEFT", health, "TOPLEFT", S.Scale( -2 ), S.Scale( 2 ) )
