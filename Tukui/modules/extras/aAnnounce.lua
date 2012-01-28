@@ -41,7 +41,7 @@ AFKPanel.Text:SetPoint( "CENTER" )
 
 AFKPanel.Text2 = S.SetFontString( AFKPanel, C["media"].asphyxiafont, 72, "MONOCHROMEOUTLINE" )
 AFKPanel.Text2:Point( "BOTTOM", AFKPanel.Text, "TOP", 0, 30 )
-AFKPanel.Text2:SetText( "Merry christmas and a happy new year!" )
+AFKPanel.Text2:SetText( " " )
 AFKPanel.Text2:SetPoint( "CENTER" )
 
 local AFKPanelIconLeft = CreateFrame( "Frame", "TukuiTalentIcon", AFKPanel )
