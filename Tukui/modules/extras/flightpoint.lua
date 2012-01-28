@@ -62,13 +62,13 @@ function FlightPointsTaxiChoiceContainer_Update()
 	local offset = HybridScrollFrame_GetOffset( scrollFrame )
 	local buttons = scrollFrame.buttons
 	local numButtons = #buttons
-	local name, isHeader,flightpathid, isExpanded
+	local name, isHeader, flightpathid, isExpanded
 	local button, index
 	local hidebuttons = false
 	local displayedHeight = 0
 	for i = 1, numButtons do
-		index = offset+i
-		name, isHeader,flightpathid, isExpanded = FlightPoints_GetFlight( index )
+		index = offset + i
+		name, isHeader, flightpathid, isExpanded = FlightPoints_GetFlight( index )
 		button = buttons[i]
 
 		if not name or name == "" then
@@ -87,6 +87,7 @@ function FlightPointsTaxiChoiceContainer_Update()
 					hidebuttons = true;
 					button.expandIcon:SetTexCoord( 0, 0.4375, 0, 0.4375 )
 				end
+
 				button.highlight:SetTexture( "Interface\\TokenFrame\\UI-TokenFrame-CategoryButton" )
 				button.highlight:SetPoint( "TOPLEFT", button, "TOPLEFT", 3, -2 )
 				button.highlight:SetPoint( "BOTTOMRIGHT", button, "BOTTOMRIGHT", -3, 2 )
@@ -166,8 +167,8 @@ end
 function FlightPoints_CreateFlyPathTable()
 	local tmptaxinode={}
 	taxinodeinfos = {}
-	for i = 1,NumTaxiNodes() do
-		if( TaxiNodeGetType( i )=="REACHABLE" ) then
+	for i = 1, NumTaxiNodes() do
+		if( TaxiNodeGetType( i ) == "REACHABLE" ) then
 			local match1, match2 = strmatch( TaxiNodeName( i ), "^(.*),(.*)" )
 			if( match2 == nil ) then
 				match1 = TaxiNodeName( i )
@@ -190,7 +191,7 @@ function FlightPoints_CreateFlyPathTable()
 		tmptaxinode[runs].flightid = 0
 		if ( not FlightPoints_Config.notexpanded[key] and ( FlightPoints_Config.alwayscollapse == nil or firstshow == false ) ) then
 			tmptaxinode[runs].isexpanded = true
-			runs=runs + 1
+			runs = runs + 1
 			for key2, val2 in pairsByKeys( val ) do
 				tmptaxinode[runs] = {}
 				tmptaxinode[runs].name = key2
@@ -212,18 +213,22 @@ function FlightPoints_CreateFlyPathTable()
 end
 
 function FlightPoints_OnEvent( self, event, ... )
-	if( event=="TAXIMAP_OPENED" ) then
+	if( event == "TAXIMAP_OPENED" ) then
 		firstshow = true
 		FlightPoints_CreateFlyPathTable()
-		FlightPointsTaxiChoice:SetHeight( TaxiFrame:GetHeight() )
+		FlightPointsTaxiChoice:SetHeight( TaxiFrame:GetHeight() + 4 )
 		FlightPointsTaxiChoice:SetWidth( 250 )
 		FlightPointsTaxiChoice:ClearAllPoints()
-		FlightPointsTaxiChoice:SetPoint( "TOPLEFT", TaxiFrame, "BOTTOMRIGHT", 0, TaxiFrame:GetHeight() )
+		FlightPointsTaxiChoice:SetPoint( "TOPLEFT", TaxiFrame, "BOTTOMRIGHT", 6, TaxiFrame:GetHeight() + 2 )
 		FlightPointsTaxiChoice:Show()
-	elseif( event=="TAXIMAP_CLOSED" )then
+		FlightPointsTaxiChoice:StripTextures()
+		FlightPointsTaxiChoice:SetTemplate( "Transparent" )
+		S.SkinCloseButton( FlightPointsTaxiChoiceCloseButton )
+		S.SkinScrollBar( FlightPointsTaxiChoiceContainerScrollBar )
+	elseif( event == "TAXIMAP_CLOSED" )then
 		FlightPointsTaxiChoice:Hide()
 		taxinodeinfos = {}
-	elseif( event=="ADDON_LOADED" ) then
+	elseif( event == "ADDON_LOADED" ) then
 		local arg1 = ...
 		if( arg1 == "FlightPoints" ) then
 			FlightPointsTaxiChoiceCollapseOnShow:SetChecked( FlightPoints_Config.alwayscollapse )
