@@ -16,6 +16,8 @@ spell_list = {
 	[62618] = 180, -- Power Word: Barrier
 	[98008] = 180, -- Spirit Link Totem
 	[740] = 480, -- Tranquility
+	[33206] = 180, -- Pain Supression
+	[97462] = 180, -- Rallying Cry
 }
 
 local show = {
@@ -104,7 +106,7 @@ end
 
 local CreateBar = function()
 	local bar = CreateFrame( "Statusbar", nil, UIParent )
-	bar:SetFrameStrata( "HIGH" )
+	bar:SetFrameStrata( "LOW" )
 	bar:Size( 200, 15 )
 	bar:SetStatusBarTexture( C["media"].normTex )
 	bar:SetMinMaxValues( 0, 100 )

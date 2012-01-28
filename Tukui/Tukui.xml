@@ -243,6 +243,8 @@
 	<Script file="modules\extras\announce.lua" />
 	<Script file="modules\extras\aRaidcooldowns.lua" />
 	<Script file="modules\extras\bgannouncer.lua" />
+	<Script file="modules\extras\flightpoint.lua" />
+	<Include file="modules\extras\flightpoint.xml" />
 	<Script file="modules\extras\mail.lua" />
 	<Script file="modules\extras\raidbuffsreminder.lua" />
 	<Script file="modules\extras\sCombo.lua" />
