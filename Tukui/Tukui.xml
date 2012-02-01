@@ -70,7 +70,6 @@
 
 	<Script file="modules\blizzard\kill.lua"/>
 	<Script file="modules\chat\spam.lua"/>
-	<Script file="modules\chat\profanity.lua"/>
 	<Script file="modules\blizzard\font.lua"/>
 	<Include file="modules\buffs\template.xml"/>
 	<Script file="modules\buffs\buffs.lua"/>
