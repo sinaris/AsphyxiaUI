@@ -92,6 +92,8 @@ if( S.client == "frFR" ) then
 	L.datatext_gatesdestroyed = "Portes Détruites : "
 	L.datatext_totalmemusage = "Utilisation Totale de la Mémoire : "
 	L.datatext_control = "Controlé par : "
+	L.datatext_cta_allunavailable = "Impossible de récupérer les informations d'appel aux armes."
+	L.datatext_cta_nodungeons = "Aucun donjon offre actuellement d'appel aux armes."
 
 	L.Slots = {
 		[1] = { 1, "Tête", 1000 },

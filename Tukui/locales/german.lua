@@ -92,7 +92,9 @@ if( S.client == "deDE" ) then
 	L.datatext_gatesdestroyed = "Tore zerstört:"
 	L.datatext_totalmemusage = "Gesamte Speichernutzung:"
 	L.datatext_control = "Kontrolliert von:"
- 
+	L.datatext_cta_allunavailable = "Could not get Call To Arms information."
+	L.datatext_cta_nodungeons = "No dungeons are currently offering a Call To Arms."
+
 	L.Slots = {
 		[1] = { 1, "Kopf", 1000 },
 		[2] = { 3, "Schultern", 1000 },
@@ -106,7 +108,7 @@ if( S.client == "deDE" ) then
 		[10] = { 17, "Schildhand", 1000 },
 		[11] = { 18, "Distanzwaffe", 1000 }
 	}
- 
+
 	L.popup_disableui = "Tukui funktioniert nicht mit deiner Auflösung, möchtest du Tukui ausschalten? (Drücke Abbrechen, falls du eine andere Auflösung testen willst.)"
 	L.popup_install = "Dies ist das erste Mal mit Tukui V13 mit diesem Charakter. Du musst dein UI neu laden, um Aktionsleisten, Variabeln und den Chat einzustellen."
 	L.popup_reset = "Warnung! Alles wird auf Tukui Standardwerte zurückgesetzt. Trotzdem fortfahren?"

@@ -92,6 +92,8 @@ if( S.client == "koKR" ) then
 	L.datatext_gatesdestroyed = "파괴한 관문:"
 	L.datatext_totalmemusage = "총 메모리 사용량:"
 	L.datatext_control = "현재 진영:"
+	L.datatext_cta_allunavailable = "Could not get Call To Arms information."
+	L.datatext_cta_nodungeons = "No dungeons are currently offering a Call To Arms."
 
 	L.bg_warsong = "전쟁노래 협곡"
 	L.bg_arathi = "아라시 분지"

@@ -92,6 +92,8 @@ if( S.client == "ruRU" ) then
 	L.datatext_gatesdestroyed = "Врат разрушено:"
 	L.datatext_totalmemusage = "Общее использование памяти:"
 	L.datatext_control = "Под контролем:"
+	L.datatext_cta_allunavailable = "Could not get Call To Arms information."
+	L.datatext_cta_nodungeons = "No dungeons are currently offering a Call To Arms."
 
 	L.Slots = {
 		[1] = { 1, "Голова", 1000 },

@@ -114,8 +114,6 @@ local enable = true
 local origa1, origf, origa2, origx, origy
 
 S.MoveUIElements = function()
-	if( InCombatLockdown() ) then print( ERR_NOT_IN_COMBAT ) return end
-
 	for i = 1, getn( S.AllowFrameMoving ) do
 		if( S.AllowFrameMoving[i] ) then
 			if( enable ) then
@@ -149,13 +147,19 @@ S.MoveUIElements = function()
 		end
 	end
 
-	if( S.MoveUnitFrames ) then S.MoveUnitFrames() end
-
 	if( enable ) then enable = false else enable = true end
 end
 SLASH_MOVING1 = "/mtukui"
 SLASH_MOVING2 = "/moveui"
-SlashCmdList["MOVING"] = S.MoveUIElements
+SlashCmdList["MOVING"] = function()
+	if( InCombatLockdown() ) then print( ERR_NOT_IN_COMBAT ) return end
+
+	S.MoveUIElements()
+
+	if( S.MoveUnitFrames ) then
+		S.MoveUnitFrames()
+	end
+end
 
 local protection = CreateFrame( "Frame" )
 protection:RegisterEvent( "PLAYER_REGEN_DISABLED" )
@@ -163,5 +167,5 @@ protection:SetScript( "OnEvent", function( self, event )
 	if( enable ) then return end
 	print( ERR_NOT_IN_COMBAT )
 	enable = false
-	moving()
+	S.MoveUIElements()
 end )

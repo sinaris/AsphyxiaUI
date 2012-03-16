@@ -91,6 +91,8 @@ if( S.client == "zhCN" ) then
 	L.datatext_gatesdestroyed = "摧毁大门："
 	L.datatext_totalmemusage = "总内存占用："
 	L.datatext_control = "控制方："
+	L.datatext_cta_allunavailable = "Could not get Call To Arms information."
+	L.datatext_cta_nodungeons = "No dungeons are currently offering a Call To Arms."
 
 	L.Slots = {
 		[1] = { 1, "头部", 1000 },
