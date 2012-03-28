@@ -92,4 +92,18 @@ local function ChatCopyButtons()
 		button:SetScript( "OnLeave", function() button:SetAlpha( 0 ) end )
 	end
 end
+
 ChatCopyButtons()
+
+for i = 1, NUM_CHAT_WINDOWS do
+	local editbox = _G["ChatFrame" .. i .. "EditBox"]
+	editbox:HookScript( "OnTextChanged", function( self )
+		local text = self:GetText()
+		local new, found = gsub( text, "|Kf(%S+)|k(%S+)%s(%S+)k:%s", "%2 %3: " )
+
+		if( found > 0 ) then
+			new = new:gsub( '|', '' )
+			self:SetText( new )
+		end
+	end )
+end
