@@ -117,7 +117,8 @@ C["castbar"] = {
 	["classcolor"] = true,
 	["castbarcolor"] = { .150, .150, .150, 1 },
 	["nointerruptcolor"] = { 1, 0, 0, 1 },
-	
+	["ticks"] = true,
+	["tickscolor"] = { 1, 0, 0, 1 },
 }
 
 C["sCombo"] = {

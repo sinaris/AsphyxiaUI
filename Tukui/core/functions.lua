@@ -1142,6 +1142,32 @@ S.PortraitUpdate = function( self, unit )
 	end
 end
 
+local ticks = {}
+function S.HideTicks()
+	for _, tick in pairs( ticks ) do
+		tick:Hide()
+	end		
+end
+
+function S.SetCastTicks( frame, numTicks )
+	S.HideTicks()
+	if( numTicks and numTicks > 0 ) then
+		local d = frame:GetWidth() / numTicks
+		for i = 1, numTicks do
+			if not ticks[i] then
+				ticks[i] = frame:CreateTexture( nil, "OVERLAY" )
+				ticks[i]:SetTexture( C["media"].normTex )
+				ticks[i]:SetVertexColor( 0, 0, 0 )
+				ticks[i]:SetWidth( 2 )
+				ticks[i]:SetHeight( frame:GetHeight() )
+			end
+			ticks[i]:ClearAllPoints()
+			ticks[i]:SetPoint( "CENTER", frame, "LEFT", d * i, 0 )
+			ticks[i]:Show()
+		end
+	end
+end
+
 S.PostCastStart = function( self, unit, name, rank, castid )
 	if( unit == "vehicle" ) then unit = "player" end
 
@@ -1161,6 +1187,38 @@ S.PostCastStart = function( self, unit, name, rank, castid )
 		else
 			self:SetStatusBarColor( unpack( C["castbar"].castbarcolor ) )
 		end
+
+		local color
+		self.unit = unit
+
+		if( C["castbar"].ticks == true and unit == "player" ) then
+			local baseTicks = S.ChannelTicks[name]
+			if( baseTicks and S.HastedChannelTicks[name] ) then
+				local tickIncRate = 1 / baseTicks
+				local curHaste = UnitSpellHaste( "player" ) * 0.01
+				local firstTickInc = tickIncRate / 2
+				local bonusTicks = 0
+				if( curHaste >= firstTickInc ) then
+					bonusTicks = bonusTicks + 1
+				end
+
+				local x = tonumber( S.Round( firstTickInc + tickIncRate, 2 ) )
+				while curHaste >= x do
+					x = tonumber( S.Round( firstTickInc + ( tickIncRate * bonusTicks ), 2 ) )
+					if( curHaste >= x ) then
+						bonusTicks = bonusTicks + 1
+					end
+				end
+
+				S.SetCastTicks( self, baseTicks + bonusTicks )
+			elseif( baseTicks ) then
+				S.SetCastTicks( self, baseTicks )
+			else
+				S.HideTicks()
+			end
+		elseif unit == "player" then
+			S.HideTicks()
+		end	
 	end
 end
 

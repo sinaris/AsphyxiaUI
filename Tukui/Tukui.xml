@@ -83,6 +83,7 @@
 	<Script file="modules\panels\control_panel.lua" />
 
 	<Script file="modules\notifications\selfbuffs.lua" />
+	<Script file="modules\notifications\castbarticks.lua" />
 
 	<Script file="modules\databars\barPanels.lua" /> 
 	<Script file="modules\databars\fps.lua" /> 
