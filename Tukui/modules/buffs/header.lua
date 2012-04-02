@@ -57,11 +57,8 @@ buffs:SetPoint( "TOPRIGHT", UIParent, -204, -10 )
 buffs:SetAttribute( "filter", "HELPFUL" )
 buffs:SetAttribute( "consolidateProxy", CreateFrame( "Frame", buffs:GetName() .. "ProxyButton", buffs, "TukuiAurasProxyTemplate" ) )
 buffs:SetAttribute( "consolidateHeader", consolidate )
-
-if( S.toc < 40300 ) then
-	buffs:SetAttribute( "consolidateTo", filter )
-	buffs:SetAttribute( "includeWeapons", 1 )
-end
+buffs:SetAttribute( "consolidateTo", filter )
+buffs:SetAttribute( "includeWeapons", 1 )
 
 buffs:SetAttribute( "consolidateDuration", -1 )
 buffs:Show()
@@ -110,3 +107,40 @@ SecureHandlerSetFrameRef( proxy, "header", consolidate )
 debuffs:SetPoint( "TOPRIGHT", UIParent, -204, -148 )
 debuffs:SetAttribute( "filter", "HARMFUL" )
 debuffs:Show()
+
+if S.toc < 40300 then return end
+-- its time for consolidate buffs get working again.
+-- WIP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+local function WorkAround( self, event, unit )
+	local num, i, count = 0, 0, 0
+
+	while true do
+		local name, _, _, _, _, _, _, _, _, consolidate = UnitAura( "player", i + 1 )
+		if not name then break end
+
+		if not consolidate or not C["auras"].consolidate then
+			num = num + 1
+		else
+			count = count + 1
+		end
+
+		i = i + 1
+	end
+
+	for i, button in self:ActiveButtons() do
+		button:SetAlpha( i > num and 0 or 1 )
+	end
+end
+
+buffs:HookScript( "OnEvent", WorkAround )
+
+local function Child( self, i )
+	i = i + 1
+
+	local child = self:GetAttribute( "child" .. i )
+	if child and child:IsShown() then
+		return i, child, child:GetAttribute( "index" )
+	end
+end
+
+function buffs:ActiveButtons() return Child, self, 0 end
