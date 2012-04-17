@@ -11,13 +11,6 @@ local function LoadSkin()
 
 	local buttons = {
 		"HelpFrameAccountSecurityOpenTicket",
-		"HelpFrameReportLagLoot",
-		"HelpFrameReportLagAuctionHouse",
-		"HelpFrameReportLagMail",
-		"HelpFrameReportLagMovement",
-		"HelpFrameReportLagSpell",
-		"HelpFrameReportLagChat",
-		"HelpFrameReportAbuseOpenTicket",
 		"HelpFrameOpenTicketHelpTopIssues",
 		"HelpFrameOpenTicketHelpOpenTicket",
 		"HelpFrameKnowledgebaseSearchButton",
@@ -70,6 +63,17 @@ local function LoadSkin()
 		b.text:SetPoint("CENTER")
 		b.text:SetJustifyH("CENTER")
 	end	
+
+	local b = _G["HelpFrameButton16"]
+	b:StripTextures(true)
+	T.SkinButton(b, true)
+	b.text:ClearAllPoints()
+	b.text:SetPoint("CENTER")
+	b.text:SetJustifyH("CENTER")
+
+	local b2 = _G["HelpFrameSubmitSuggestionSubmit"]
+	b2:StripTextures(true)
+	T.SkinButton(b2, true)
 
 	-- skin table options
 	for i = 1, HelpFrameKnowledgebaseScrollFrameScrollChild:GetNumChildren() do

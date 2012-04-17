@@ -2410,7 +2410,9 @@ end
 local party = oUF:SpawnHeader( "oUF_noParty", nil, "party", "showParty", true )
 
 local PET_DISMISS = "PET_DISMISS"
+local REPORT_PLAYER = "REPORT_PLAYER"
 if( S.myclass == "HUNTER" ) then PET_DISMISS = nil end
+if( S.build < 15595 ) then REPORT_PLAYER = nil end
 
 do
 	UnitPopupMenus["SELF"] = { "PVP_FLAG", "LOOT_METHOD", "LOOT_THRESHOLD", "OPT_OUT_LOOT_TITLE", "LOOT_PROMOTE", "DUNGEON_DIFFICULTY", "RAID_DIFFICULTY", "RESET_INSTANCES", "RAID_TARGET_ICON", "SELECT_ROLE", "CONVERT_TO_PARTY", "CONVERT_TO_RAID", "LEAVE", "CANCEL" }
