@@ -975,7 +975,16 @@ local function Shared( self, unit )
 			end
 
 			if( S.lowversion ) then
+				buffs:SetHeight( 21.5 )
+				buffs:SetWidth( 186 )
+				buffs.size = 21.5
+				buffs.num = 8
 
+				debuffs:SetHeight( 21.5 )
+				debuffs:SetWidth( 186 )
+				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", 0, 2 )
+				debuffs.size = 21.5
+				debuffs.num = 24
 			else
 				buffs:SetHeight( 27.5 )
 				buffs:SetWidth( 248 )

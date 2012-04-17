@@ -13,10 +13,12 @@ S.AllowFrameMoving = {
 	TukuiVehicleAnchor,
 	TukuiExtraActionBarFrameHolder,
 	CDAnchor,
+	PCBanchor,
+	TCBanchor,
 }
 
 local function exec( self, enable )
-	if( self == TukuiGMFrameAnchor or self == CDAnchor ) then
+	if( self == TukuiGMFrameAnchor or self == CDAnchor or self == PCBanchor or self == TCBanchor ) then
 		if( enable ) then
 			self:Show()
 		else
@@ -73,7 +75,7 @@ local function exec( self, enable )
 			self:SetAlpha( 1 )
 		else
 			self:SetAlpha( 0 )
-			if self == TukuiTooltipAnchor then 
+			if( self == TukuiTooltipAnchor ) then 
 				local position = TukuiTooltipAnchor:GetPoint()
 				local healthBar = GameTooltipStatusBar
 				if( position:match( "TOP" ) ) then
@@ -153,6 +155,38 @@ SLASH_MOVING1 = "/mtukui"
 SLASH_MOVING2 = "/moveui"
 SlashCmdList["MOVING"] = function()
 	if( InCombatLockdown() ) then print( ERR_NOT_IN_COMBAT ) return end
+
+	local w = tonumber( string.match( ( {GetScreenResolutions()} )[GetCurrentResolution()], "(%d+)x+%d" ) )
+	local h = tonumber( string.match( ( {GetScreenResolutions()} )[GetCurrentResolution()], "%d+x(%d+)" ) )
+	local x = 16
+
+	function Grid()
+		ali = CreateFrame( "Frame", nil, UIParent )
+		ali:SetFrameLevel( 0 )
+		ali:SetFrameStrata( "TOOLTIP" )
+
+		for i = -( w / x / 2 ), w / x / 2 do
+			local Aliv = ali:CreateTexture( nil, "BACKGROUND" )
+			Aliv:SetTexture( .3, 0, 0, .7 )
+			Aliv:Point( "CENTER", UIParent, "CENTER", i * x, 0 )
+			Aliv:SetSize( 1, h )
+		end
+
+		for i = -( h / x / 2 ), h / x / 2 do
+			local Alih = ali:CreateTexture( nil, "BACKGROUND" )
+			Alih:SetTexture( .3, 0, 0, .7 )
+			Alih:Point( "CENTER", UIParent, "CENTER", 0, i * x )
+			Alih:SetSize( w, 1 )
+		end
+	end
+
+	if not ali then
+		Grid()
+	elseif( ali:IsShown() ) then
+		ali:Hide()
+	else
+		Grid()
+	end
 
 	S.MoveUIElements()
 

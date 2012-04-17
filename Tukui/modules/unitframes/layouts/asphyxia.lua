@@ -573,6 +573,17 @@ local function Shared( self, unit )
 		-- castbar
 		-----------------------
 		if( C["unitframes"].unitcastbar == true ) then
+			local pcb = CreateFrame( "Frame", "PCBanchor", UIParent )
+			pcb:CreatePanel( "Default", TukuiBar1:GetWidth() - 4, 20, "BOTTOMRIGHT", TukuiBar1, "TOPRIGHT", -2, 5 )
+			pcb:SetClampedToScreen( true )
+			pcb:SetMovable( true )
+			pcb:SetBackdropColor( 0, 0, 0 )
+			pcb:SetBackdropBorderColor( 1, 0, 0 )
+			pcb.text = S.SetFontString( pcb, C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+			pcb.text:SetPoint( "CENTER" )
+			pcb.text:SetText( "move playercastbar" )
+			pcb:Hide()
+
 			local castbar = CreateFrame( "StatusBar", self:GetName() .. "CastBar", self )
 			castbar:SetStatusBarTexture( normTex )
 
@@ -588,7 +599,7 @@ local function Shared( self, unit )
 			end
 
 			castbar:SetHeight( 20 )
-			castbar:Point( "BOTTOMRIGHT", TukuiBar1, "TOPRIGHT", -2, 5 )
+			castbar:Point( "RIGHT", PCBanchor, "RIGHT", 0, 0 )
 			castbar:SetFrameLevel( 6 )
 
 			if( C["unitframes"].cbspark == true ) then
@@ -938,7 +949,16 @@ local function Shared( self, unit )
 			end
 
 			if( S.lowversion ) then
+				buffs:SetHeight( 21.5 )
+				buffs:SetWidth( 186 )
+				buffs.size = 21.5
+				buffs.num = 8
 
+				debuffs:SetHeight( 21.5 )
+				debuffs:SetWidth( 186 )
+				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", 0, 2 )
+				debuffs.size = 21.5
+				debuffs.num = 24
 			else
 				buffs:SetHeight( 27.5 )
 				buffs:SetWidth( 248 )
@@ -972,6 +992,17 @@ local function Shared( self, unit )
 		-- castbar
 		-----------------------
 		if( C["unitframes"].unitcastbar == true ) then
+			local tcb = CreateFrame( "Frame", "TCBanchor", UIParent )
+			tcb:CreatePanel( "Default", 225, 20, "TOPRIGHT", self, "BOTTOMRIGHT", 0, -17 )
+			tcb:SetClampedToScreen( true )
+			tcb:SetMovable( true )
+			tcb:SetBackdropColor( 0, 0, 0 )
+			tcb:SetBackdropBorderColor( 1, 0, 0 )
+			tcb.text = S.SetFontString( tcb, C["media"].pixelfont, C["datatext"].fontsize, "MONOCHROMEOUTLINE" )
+			tcb.text:SetPoint( "CENTER" )
+			tcb.text:SetText( "move targetcastbar" )
+			tcb:Hide()
+
 			local castbar = CreateFrame( "StatusBar", self:GetName() .. "CastBar", self )
 			castbar:SetStatusBarTexture( normTex )
 
@@ -987,7 +1018,7 @@ local function Shared( self, unit )
 			end
 
 			castbar:SetHeight( 20 )
-			castbar:Point( "TOPRIGHT", self, "BOTTOMRIGHT", 0, 13 )
+			castbar:Point( "RIGHT", TCBanchor, "RIGHT", 0, 0 )
 			castbar:SetFrameLevel( 6 )
 
 			if( C["unitframes"].cbspark == true ) then
@@ -2248,8 +2279,8 @@ local tot = oUF:Spawn( "targettarget", "TukuiTargetTarget" )
 local pet = oUF:Spawn( "pet", "TukuiPet" )
 local focus = oUF:Spawn( "focus", "TukuiFocus" )
 
-player:Size( 230, player.Health:GetHeight() + player.Power:GetHeight() + player.panel:GetHeight() + 6 )
-target:Size( 230, target.Health:GetHeight() + target.Power:GetHeight() + target.panel:GetHeight() + 6 )
+player:Size( 230, 26 )
+target:Size( 230, 26 )
 tot:Size( 130, tot.Health:GetHeight() + tot.Power:GetHeight() + tot.panel:GetHeight() + 6 )
 pet:Size( 130, pet.Health:GetHeight() + 2 + pet.panel:GetHeight() + 6 )
 focus:Size( 200, 29 )
@@ -2266,8 +2297,8 @@ f:SetScript( "OnEvent", function( self, event, addon )
 	if( IsAddOnLoaded( "Tukui_Raid" ) ) then
 		player:Point( "TOP", UIParent, "BOTTOM", -170 , 260 )
 		target:Point( "TOP", UIParent, "BOTTOM", 170, 260 )
-		tot:Point( "TOPRIGHT", TukuiTarget, "BOTTOMRIGHT", 0, -20 )
-		pet:Point( "TOPLEFT", TukuiPlayer, "BOTTOMLEFT", 0, -20 )
+		tot:Point( "TOPRIGHT", TukuiTarget, "BOTTOMRIGHT", 0, -49 )
+		pet:Point( "TOPLEFT", TukuiPlayer, "BOTTOMLEFT", 0, -49 )
 		focus:Point( "TOP", UIParent, "BOTTOM", -450, 602 )
 	elseif( IsAddOnLoaded( "Tukui_Raid_Healing" ) ) then
 		player:Point( "TOP", UIParent, "BOTTOM", -309 , 350 )

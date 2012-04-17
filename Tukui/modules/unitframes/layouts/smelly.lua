@@ -928,28 +928,29 @@ local function Shared( self, unit )
 			local debuffs = CreateFrame( "Frame", nil, self )
 
 			if( S.lowversion ) then
-
+				buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", 0, 26 )
+				buffs:SetHeight(21.5)
+				buffs:SetWidth(186)
+				buffs.size = 21.5
+				buffs.num = 8
+				
+				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", 0, 2 )
+				debuffs:SetHeight( 21.5 )
+				debuffs:SetWidth( 186 )
+				debuffs.size = 21.5
+				debuffs.num = 24
 			else
-				buffs:ClearAllPoints()
-				buffs:SetPoint( "BOTTOMLEFT", self, "TOPLEFT", 0, 3 )
-				buffs.ClearAllPoints = S.dummy
-				buffs.SetPoint = S.dummy
-				buffs.Point = S.dummy
-			end
-
-			if( S.lowversion ) then
-
-			else
-				buffs:SetHeight( 27.5 )
-				buffs:SetWidth( 248 )
-				buffs.size = 27
+				buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", -2, 32 )
+				buffs:SetHeight( 26 )
+				buffs:SetWidth( 252 )
+				buffs.size = 27.5
 				buffs.num = 8
 
-				debuffs:SetHeight( 27.5 )
-				debuffs:SetWidth( 248 )
-				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", -18, 2 )
-				debuffs.size = 27
-				debuffs.num = 16
+				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", -2, 2 )
+				debuffs:SetHeight( 26 )
+				debuffs:SetWidth( 247 )
+				debuffs.size = 26
+				debuffs.num = 24
 			end
 
 			buffs.spacing = 2
