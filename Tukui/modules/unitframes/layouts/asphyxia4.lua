@@ -941,35 +941,16 @@ local function Shared( self, unit )
 			local buffs = CreateFrame( "Frame", nil, self )
 			local debuffs = CreateFrame( "Frame", nil, self )
 
-			if( S.lowversion ) then
-				buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", 0, 26 )
-			else
-				buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", -2, 32 )
-			end
+			buffs:SetHeight( 26 )
+			buffs:SetWidth( 252 )
+			buffs.size = 27.5
+			buffs.num = 8
 
-			if( S.lowversion ) then
-				buffs:SetHeight( 21.5 )
-				buffs:SetWidth( 186 )
-				buffs.size = 21.5
-				buffs.num = 8
-
-				debuffs:SetHeight( 21.5 )
-				debuffs:SetWidth( 186 )
-				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", 0, 2 )
-				debuffs.size = 21.5	
-				debuffs.num = 24
-			else
-				buffs:SetHeight( 26 )
-				buffs:SetWidth( 252 )
-				buffs.size = 27.5
-				buffs.num = 8
-
-				debuffs:SetHeight( 26 )
-				debuffs:SetWidth( 252 )
-				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", -2, 2 )
-				debuffs.size = 26
-				debuffs.num = 27
-			end
+			debuffs:SetHeight( 26 )
+			debuffs:SetWidth( 252 )
+			debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", -2, 2 )
+			debuffs.size = 26
+			debuffs.num = 27
 
 			buffs.spacing = 2
 			buffs.initialAnchor = "TOPLEFT"
