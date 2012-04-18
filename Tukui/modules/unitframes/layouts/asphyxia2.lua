@@ -960,20 +960,47 @@ local function Shared( self, unit )
 		-----------------------
 		-- buffs, debuffs
 		-----------------------
-		if( C["unitframes"].targetauras == true ) then
+		if( ( unit == "target" and C["unitframes"].targetauras ) or ( unit == "player" and C["unitframes"].playerauras ) ) then
 			local buffs = CreateFrame( "Frame", nil, self )
 			local debuffs = CreateFrame( "Frame", nil, self )
 
-			buffs:SetHeight( 27.5 )
-			buffs:SetWidth( 248 )
-			buffs.size = 27
-			buffs.num = 8
+			if( ( S.myclass == "SHAMAN" or S.myclass == "DEATHKNIGHT" or S.myclass == "PALADIN" or S.myclass == "WARLOCK" ) and ( C["unitframes"].playerauras ) and ( unit == "player" ) ) then
+				if( S.lowversion ) then
+					buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", 0, 34 )
+				else
+					buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", 0, 38 )
+				end
+			else
+				if( S.lowversion ) then
+					buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", 0, 26 )
+				else
+					buffs:SetPoint( "TOPLEFT", self, "TOPLEFT", -2, 32 )
+				end
+			end
 
-			debuffs:SetHeight( 27.5 )
-			debuffs:SetWidth( 248 )
-			debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", -18, 2 )
-			debuffs.size = 27
-			debuffs.num = 16
+			if( S.lowversion ) then
+				buffs:SetHeight( 21.5 )
+				buffs:SetWidth( 186 )
+				buffs.size = 21.5
+				buffs.num = 8
+
+				debuffs:SetHeight( 21.5 )
+				debuffs:SetWidth( 186 )
+				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", 0, 2 )
+				debuffs.size = 21.5
+				debuffs.num = 24
+			else
+				buffs:SetHeight( 26 )
+				buffs:SetWidth( 252 )
+				buffs.size = 27.5
+				buffs.num = 8
+
+				debuffs:SetHeight( 26 )
+				debuffs:SetWidth( 247 )
+				debuffs:SetPoint( "BOTTOMLEFT", buffs, "TOPLEFT", -2, 2 )
+				debuffs.size = 26
+				debuffs.num = 24
+			end
 
 			buffs.spacing = 2
 			buffs.initialAnchor = "TOPLEFT"
@@ -987,7 +1014,11 @@ local function Shared( self, unit )
 			debuffs["growth-x"] = "LEFT"
 			debuffs.PostCreateIcon = S.PostCreateAura
 			debuffs.PostUpdateIcon = S.PostUpdateAura
-			debuffs.onlyShowPlayer = C["unitframes"].onlyselfdebuffs
+
+			if( unit == "target" ) then
+				debuffs.onlyShowPlayer = C["unitframes"].onlyselfdebuffs
+			end
+
 			self.Debuffs = debuffs
 		end
 
