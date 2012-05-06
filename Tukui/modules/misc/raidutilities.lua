@@ -15,7 +15,7 @@ local function CreateUtilities( self, event, addon )
 
 		local function CheckRaidStatus()
 			local inInstance, instanceType = IsInInstance()
-			if( UnitIsRaidOfficer( "player" ) ) and not ( inInstance and ( instanceType == "pvp" or instanceType == "arena" ) ) then
+			if( UnitIsRaidOfficer( "player" ) or IsPartyLeader() ) and not ( inInstance and ( instanceType == "pvp" or instanceType == "arena" ) ) then
 				return true
 			else
 				return false

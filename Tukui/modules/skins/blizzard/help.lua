@@ -64,16 +64,22 @@ local function LoadSkin()
 		b.text:SetJustifyH("CENTER")
 	end	
 
-	local b = _G["HelpFrameButton16"]
-	b:StripTextures(true)
-	T.SkinButton(b, true)
-	b.text:ClearAllPoints()
-	b.text:SetPoint("CENTER")
-	b.text:SetJustifyH("CENTER")
+	if T.build >= 15595 then
+		local b = _G["HelpFrameButton16"]
+		b:StripTextures(true)
+		T.SkinButton(b, true)
+		b.text:ClearAllPoints()
+		b.text:SetPoint("CENTER")
+		b.text:SetJustifyH("CENTER")
 
-	local b2 = _G["HelpFrameSubmitSuggestionSubmit"]
-	b2:StripTextures(true)
-	T.SkinButton(b2, true)
+		local b2 = _G["HelpFrameSubmitSuggestionSubmit"]
+		b2:StripTextures(true)
+		T.SkinButton(b2, true)
+
+		local b3 = _G["HelpFrameButton6"]
+		b3:ClearAllPoints()
+		b3:Point("TOP", b, "BOTTOM", 0, -4)
+	end
 
 	-- skin table options
 	for i = 1, HelpFrameKnowledgebaseScrollFrameScrollChild:GetNumChildren() do

@@ -25,9 +25,9 @@ C["media"] = {
 	["kr_uffont"] = [[Fonts\2002.TTF]],
 	["kr_dmgfont"] = [[Fonts\2002.TTF]],
 
-	["cn_font"] = [=[Fonts\ZYKai_T.TTF]=],
-	["cn_uffont"] = [[Fonts\ZYHei.TTF]],
-	["cn_dmgfont"] = [[Fonts\ZYKai_C.TTF]],
+	["cn_font"] = [=[Fonts\ARKai_T.TTF]=],
+	["cn_uffont"] = [[Fonts\ARHei.TTF]],
+	["cn_dmgfont"] = [[Fonts\ARKai_C.TTF]],
 
 	["asphyxiafont"] = [=[Interface\Addons\Tukui\medias\fonts\asphyxia_font.ttf]=],
 	["pixelfont"] = [=[Interface\Addons\Tukui\medias\fonts\pixel_font.ttf]=],
